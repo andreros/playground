@@ -1,0 +1,39 @@
+{
+    "name": "node-express-jade-mongodb-example",
+    "version": "1.0.0",
+    "description": "An example of a simple web application with a NodeJS and Express back-end, a MongoDB database and Jade template engine using Twitter Bootstrap front-end.",
+    "scripts": {
+        "start": "node ./bin/www.js"
+    },
+    "main": "./bin/www.js",
+    "dependencies": {
+        "body-parser": "~1.12.0",
+        "cookie-parser": "~1.3.4",
+        "debug": "~2.1.1",
+        "express": "~4.12.2",
+        "jade": "~1.9.2",
+        "mongodb": "~2.0",
+        "monk": "1.0.1",
+        "morgan": "~1.5.1",
+        "serve-favicon": "~2.2.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andreros/playground/node-express-jade-mongodb-example"
+    },
+    "homepage": "https://github.com/andreros/playground/node-express-jade-mongodb-example#readme",
+    "keywords": [
+        "node",
+        "nodejs",
+        "express",
+        "expressjs",
+        "jade",
+        "javascript",
+        "mongo",
+        "mongodb",
+        "css"
+    ],
+    "author": "André Rosa <andreros@gmail.com>",
+    "contributors": [],
+    "license": "Unlicense"
+}

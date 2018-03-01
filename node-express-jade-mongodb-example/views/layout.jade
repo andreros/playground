@@ -1,0 +1,163 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+        meta(name="description", content="#{config.project.description}")
+        meta(name="author", content="#{config.author.name}")
+        meta(name="contact", content="#{config.author.contact}")
+
+        title #{config.project.name} - #{config.project.title}
+        link(rel="stylesheet", href="/bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/font-awesome/css/font-awesome.min.css")
+        link(rel="stylesheet", href="/stylesheets/style.css")
+        link(rel="shortcut icon", type="image/x-icon", href="/favicon.png")
+
+        script(src="/javascripts/jquery.min.js")
+    body
+        //------------------------------------------------------------------------------------------------------------------
+        // Nav Bar
+        //------------------------------------------------------------------------------------------------------------------
+        div.navbar-wrapper
+            div.container
+                nav.navbar.navbar-inverse.navbar-static-top
+                    div.container
+                        div.navbar-header
+                            button.navbar-toggle.collapsed(type="button", data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+                                span.sr-only Toggle navigation
+                                span.icon-bar
+                                span.icon-bar
+                                span.icon-bar
+                            a.navbar-brand(href="/")
+                                span
+                                    img.logo(src="/images/gear.png")
+                                    | &nbsp;&nbsp;#{config.project.name}
+                        div.navbar-collapse.collapse(id="navbar")
+                            ul.nav.navbar-nav
+                                if indexMenuActive
+                                    li.active
+                                        a(href="/") Home
+                                else
+                                    li
+                                        a(href="/") Home
+                                if newsMenuActive
+                                    li.active
+                                        a(href="/news/") News
+                                else
+                                    li
+                                        a(href="/news/") News
+                                if contactMenuActive
+                                    li.active
+                                        a(href="/contact/") Contact
+                                else
+                                    li
+                                        a(href="/contact/") Contact
+                                li.dropdown
+                                    a.dropdown-toggle(href="#", data-toggle="dropdown" role="button" aria-expanded="false") Dropdown
+                                        span.caret
+                                    ul.dropdown-menu(role="menu")
+                                        li
+                                            a(href="#") Action
+                                        li
+                                            a(href="#") Another action
+                                        li
+                                            a(href="#") Something else here
+                                        li.divider
+                                        li.dropdown-header Nav header
+                                        li
+                                            a(href="#") Separated link
+                                        li
+                                            a(href="#") One more separated link
+                            ul.nav.navbar-nav.navbar-right
+                                li
+                                    a(href="/login/") Login
+
+        //------------------------------------------------------------------------------------------------------------------
+        // Carousel
+        //------------------------------------------------------------------------------------------------------------------
+        div.carousel.slide(id="myCarousel", data-ride="carousel")
+            ol.carousel-indicators
+                li.active(data-target="#myCarousel" data-slide-to="0")
+                li(data-target="#myCarousel" data-slide-to="1")
+                li(data-target="#myCarousel" data-slide-to="2")
+                li(data-target="#myCarousel" data-slide-to="3")
+
+            div.carousel-inner(role="listbox")
+                div.item.active
+                    img.first-slide(src="/images/slide01.jpg", alt="First slide", title="First slide")
+                    div.container
+                        div.carousel-caption
+                            h1 Example headline.
+                            p Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
+                            p
+                                a.btn.btn-lg.btn-primary(href="#", role="button") Sign up today
+
+                div.item
+                    img.second-slide(src="/images/slide02.jpg", alt="Second slide", title="Second slide")
+                    div.container
+                        div.carousel-caption
+                            h1 Another example headline.
+                            p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            p
+                                a.btn.btn-lg.btn-primary(href="#", role="button") Learn more
+
+                div.item
+                    img.third-slide(src="/images/slide03.jpg", alt="Third slide", title="Third slide")
+                    div.container
+                        div.carousel-caption
+                            h1 One more for good measure.
+                            p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            p
+                                a.btn.btn-lg.btn-primary(href="#", role="button") Browse gallery
+
+                div.item
+                    img.fourth-slide(src="/images/slide04.jpg", alt="Fourth slide", title="Fourth slide")
+                    div.container
+                        div.carousel-caption
+                            h1 The last headline.
+                            p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            p
+                                a.btn.btn-lg.btn-primary(href="#", role="button") Browse gallery
+
+            a.left.carousel-control(href="#myCarousel", role="button", data-slide="prev")
+                span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+                span.sr-only Previous
+            a.right.carousel-control(href="#myCarousel", role="button", data-slide="next")
+                span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+                span.sr-only Next
+
+        block content
+
+        footer
+            div.container
+                div.row
+                    div.col-md-5.pull-left
+                        h1 Follow us
+                        div.btn-group
+                            a.btn.btn-twitter.btn-lg(href="#{config.social.twitter}", target="_blank")
+                                i.fa.fa-twitter.fa-lg
+                                |  Twitter
+                            a.btn.btn-facebook.btn-lg(href="#{config.social.facebook}", target="_blank")
+                                i.fa.fa-facebook-f.fa-lg
+                                |  Facebook
+                            a.btn.btn-google-plus.btn-lg(href="#{config.social.googlePlus}", target="_blank")
+                                i.fa.fa-google-plus.fa-lg
+                                |  Google+
+                    div.col-md-5.pull-right.text-right
+                        br
+                        br
+                        br
+                        br
+                        | &copy; 2015 #{config.project.name}. &middot;&nbsp;
+                        a(href="#") Privacy
+                        &nbsp;&middot;&nbsp;
+                        a(href="#") Terms
+
+        //------------------------------------------------------------------------------------------------------------------
+        // Bootstrap core JavaScript (placed at the end of the document so the pages load faster)
+        //------------------------------------------------------------------------------------------------------------------
+        script(src="/bootstrap/js/bootstrap.min.js")
+        script(src="/javascripts/ie10-viewport-bug-workaround.js")

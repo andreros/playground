@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    div.container
+        div.page-header
+            h1 #{error.status} - #{message}
+        pre #{error.stack}

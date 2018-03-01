@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+    //------------------------------------------------------------------------------------------------------------------
+    // News Detail
+    //------------------------------------------------------------------------------------------------------------------
+    div.container
+        div.row
+            div.col-md-2.col-sm-3.text-center
+                a.story-img
+                    img.img-circle(src="/images/#{newsDetail.image}", width="150", height="150")
+            div.col-md-10.col-sm-9.column
+                div.page-header
+                    h1 #{newsDetail.title}
+                    h2
+                        small #{newsDetail.subtitle}
+                    h5
+                        small.pull-right published on #{newsDetail.creationDate.getDate()}-#{newsDetail.creationDate.getMonth()}-#{newsDetail.creationDate.getFullYear()}
+                p.text-justify !{newsDetail.text}
+                p
+                    a.btn.btn-default(href="/news/", role="button") &laquo; Back to News
