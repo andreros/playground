@@ -1,3 +1,3 @@
-import { ElectronApp } from './electron';
+import { ToDoListApp } from './app';
 
-const electronApp = new ElectronApp();
+const toDoListApp = new ToDoListApp();

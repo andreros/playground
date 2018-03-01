@@ -1,19 +1,24 @@
-import { BrowserWindow, Menu, app } from 'electron';
+import { BrowserWindow, Menu, app, ipcMain } from 'electron';
 import { MainMenu } from '../mainMenu';
 import { Window } from '../window';
 
-export class ElectronApp {
+export class ToDoListApp {
 
     private app: Electron.App;
     private appMainMenu: Electron.Menu;
     private appMainWindow: Electron.BrowserWindow;
     private mainMenu: MainMenu;
+    private ipcMain: Electron.IpcMain;
 
     constructor() {
         this.app = app;
         this.app.on(this.handlers().appReady.event, this.handlers().appReady.callback);
         this.app.on(this.handlers().windowAllClosed.event, this.handlers().windowAllClosed.callback);
         this.mainMenu = new MainMenu(this.app);
+        this.ipcMain = ipcMain;
+        this.ipcMain.on('task:add', (e: Event, args: any) => {
+            this.appMainWindow.webContents.send('task:add', args);
+        });
     }
 
     private handlers = (): any => {
@@ -44,7 +49,7 @@ export class ElectronApp {
         this.appMainWindow = Window.getWindow({
             width: 1366,
             height: 768,
-            target: 'pages/main.html'
+            target: 'app/ToDoListApp/index.html'
         });
         this.appMainWindow.on(this.handlers().mainWindowClose.event, this.handlers().mainWindowClose.callback);
         this.appMainMenu = Menu.buildFromTemplate(this.mainMenu.getMainMenu());

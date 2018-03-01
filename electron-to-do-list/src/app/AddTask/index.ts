@@ -29,12 +29,13 @@ export class AddTask {
      */
     public open = (): void => {
         this.addTaskWindow = Window.getWindow({
-            width: 600,
-            height: 200,
+            width: 1000,
+            height: 600,
             frame: false,
-            target: 'electron/addTask/index.html'
+            target: 'app/AddTask/index.html'
         });
-        // this.addTaskWindow.webContents.openDevTools();
+
+        this.addTaskWindow.webContents.openDevTools();
 
         this.addTaskWindow.webContents.executeJavaScript('document.getElementById("test")', false, (result: any) => {
             console.log('result: ', result);
