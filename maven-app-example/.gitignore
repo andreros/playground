@@ -1,0 +1,40 @@
+/spikes/**
+/cache/**
+/grunt/node_modules/
+/dist/nbproject/private/
+/dist/nbprojectz
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Netbeans
+nbproject/
+nb-configuration.xml
+nbactions.xml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Mac
+.DS_Store
+
+# Maven
+/target/
+/out/
+
+# CodeKit
+src/config.codekit3
+
+# Sublime Text
+/*.sublime-project
+/*.sublime-workspace
+
+# Git
+git.properties
+
+# Other
+*.log
