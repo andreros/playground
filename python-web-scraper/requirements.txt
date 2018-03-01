@@ -1,0 +1,2 @@
+selenium==2.53.6
+pyvirtualdisplay=0.2
