@@ -1,5 +1,5 @@
 {
-    "name": "electron-typescript-boilerplate",
+    "name": "electron-to-do-list",
     "version": "1.0.0",
     "description": "Boilerplate for building an Electron application written in Typescript, with SASS for CSS and Handlebars for HTML templating.",
     "main": "dist/index.js",
@@ -35,12 +35,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/andreros/electron-typescript-boilerplate"
+        "url": "https://github.com/andreros/playground/tree/master/electron-to-do-list"
     },
-    "bugs": {
-        "url": "https://github.com/andreros/electron-typescript-boilerplate/issues"
-    },
-    "homepage": "https://github.com/andreros/electron-typescript-boilerplate#readme",
+    "homepage": "https://github.com/andreros/playground/tree/master/electron-to-do-list#readme",
     "keywords": [
         "boilerplate",
         "electron",

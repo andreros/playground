@@ -19,9 +19,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/andreros/playground/node-express-jade-mongodb-example"
+        "url": "https://github.com/andreros/playground/tree/master/node-express-jade-mongodb-example"
     },
-    "homepage": "https://github.com/andreros/playground/node-express-jade-mongodb-example#readme",
+    "homepage": "https://github.com/andreros/playground/tree/master/node-express-jade-mongodb-example#readme",
     "keywords": [
         "node",
         "nodejs",

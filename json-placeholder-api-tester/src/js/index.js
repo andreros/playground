@@ -1,15 +1,24 @@
-//JSON Placeholder API Test
+/**
+ * file: index.js
+ * description: JSON Placeholder API Test.
+ * author: André Rosa
+ */
 
 function executeRequest(method, url) {
-    var root = 'http://jsonplaceholder.typicode.com';
+    var root = 'http://jsonplaceholder.typicode.com'; // straight call to the JSONPlaceholder API
+        // tunneled call to the JSONPlaceholder through 'node-js-api-example'
+        // to make calls to the local (tunnel) API, please run the 'node-js-api-example' project
+        // root = 'http://localhost:8080/api/v1';
 
     $.ajax({
         url: root + url,
         method: method
     }).then(function(data, textStatus, jqXHR) {
-        $('#jsonResponse').html(jqXHR.responseText);
+        $('#jsonResponse').html(JSON.stringify(jqXHR.responseJSON, null, 4));
     });
 };
+
+// buttons event handlers
 
 $('#getPosts').on('click', function() {
     executeRequest('GET', '/posts');
@@ -29,6 +38,10 @@ $('#getComments').on('click', function() {
 
 $('#getCommentsPostOne').on('click', function() {
     executeRequest('GET', '/comments?postId=1');
+});
+
+$('#getPostsUserOne').on('click', function() {
+    executeRequest('GET', '/posts?userId=1');
 });
 
 $('#getAlbums').on('click', function() {
@@ -62,4 +75,3 @@ $('#PatchPostOne').on('click', function() {
 $('#DeletePostOne').on('click', function() {
     executeRequest('DELETE', '/posts/1');
 });
-

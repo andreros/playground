@@ -10,9 +10,9 @@
     "devDependencies": {},
     "repository": {
         "type": "git",
-        "url": "https://github.com/andreros/playground/json-placeholder-api-tester"
+        "url": "https://github.com/andreros/playground/tree/master/json-placeholder-api-tester"
     },
-    "homepage": "https://github.com/andreros/playground/json-placeholder-api-tester#readme",
+    "homepage": "https://github.com/andreros/playground/tree/master/json-placeholder-api-tester#readme",
     "keywords": [
         ""
     ],

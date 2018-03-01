@@ -5,9 +5,9 @@
     "main": "hooks/pre-commit",
     "repository": {
         "type": "git",
-        "url": "https://github.com/andreros/playground/git-pre-commit-hooks-example"
+        "url": "https://github.com/andreros/playground/tree/master/git-pre-commit-hooks-example"
     },
-    "homepage": "https://github.com/andreros/playground/git-pre-commit-hooks-example#readme",
+    "homepage": "https://github.com/andreros/playground/tree/master/git-pre-commit-hooks-example#readme",
     "keywords": [
         "git",
         "pre-commit",
