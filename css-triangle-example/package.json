@@ -1,0 +1,19 @@
+{
+    "name": "css-triangle-example",
+    "version": "1.0.0",
+    "description": "An example of CSS Triangle as explained by Chris Coyier in CSS-Tricks.com.",
+    "main": "src/index.html",
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andreros/playground/css-triangle-example"
+    },
+    "homepage": "https://css-tricks.com/snippets/css/css-triangle/",
+    "keywords": [
+        "css",
+        "triangle"
+    ],
+    "author": "André Rosa <andreros@gmail.com>",
+    "contributors": [],
+    "license": "Unlicense"
+}
