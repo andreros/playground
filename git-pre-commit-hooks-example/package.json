@@ -1,0 +1,21 @@
+{
+    "name": "git-pre-commit-hooks-example",
+    "version": "1.0.0",
+    "description": "Example of how to create and include git pre-commit hooks in any project using git as its repository.",
+    "main": "hooks/pre-commit",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andreros/playground/git-pre-commit-hooks-example"
+    },
+    "homepage": "https://github.com/andreros/playground/git-pre-commit-hooks-example#readme",
+    "keywords": [
+        "git",
+        "pre-commit",
+        "hooks"
+    ],
+    "contributors": [
+        "André Rosa <andreros@gmail.com>",
+        "Emanuel Lopes <emanuel.lopes.pt@gmail.com>"
+    ],
+    "license": "Unlicense"
+}
