@@ -1,8 +1,7 @@
-# Node API Example
+# JSONPlaceholder Tunnel API - Node API Example
 
 An example of a RESTful API implemented with Node.js, Express and Request. This example implements an API that performs
 calls to another API, acting like a tunnel. The target API is [http://jsonplaceholder.typicode.com/](http://jsonplaceholder.typicode.com/).
-The available
 
 
 ## Prerequisites
