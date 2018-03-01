@@ -6,8 +6,8 @@
 
 function executeRequest(method, url) {
     var root = 'http://jsonplaceholder.typicode.com'; // straight call to the JSONPlaceholder API
-        // tunneled call to the JSONPlaceholder through 'node-js-api-example'
-        // to make calls to the local (tunnel) API, please run the 'node-js-api-example' project
+        // tunneled call to the JSONPlaceholder through 'json-placeholder-tunnel-api'
+        // to make calls to the local (tunnel) API, please run the 'json-placeholder-tunnel-api' project
         // root = 'http://localhost:8080/api/v1';
 
     $.ajax({
