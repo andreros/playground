@@ -1,0 +1,22 @@
+{
+    "name": "json-placeholder-api-tester",
+    "version": "1.0.0",
+    "description": "Simple application to test the JSONPlaceholder, a fake online REST API for Testing and Prototyping.",
+    "main": "index.html",
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andreros/playground/json-placeholder-api-tester"
+    },
+    "homepage": "https://github.com/andreros/playground/json-placeholder-api-tester#readme",
+    "keywords": [
+        ""
+    ],
+    "author": "André Rosa <andreros@gmail.com>",
+    "contributors": [],
+    "license": "Unlicense"
+}

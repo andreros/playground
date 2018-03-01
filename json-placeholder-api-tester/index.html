@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSONPlaceholder API Tester</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
+        media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        .brand-logo {
+            white-space: nowrap;
+        }
+
+        .json-response-container {
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        .json-response {
+            min-height: 245px;
+        }
+
+        .col>.btn {
+            width: 100%;
+        }
+
+        .row {
+            margin-bottom: 0;
+        }
+
+        .col {
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">&nbsp;&nbsp;JSONPlaceholder API Tester</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="row">
+                <form class="col s12">
+
+                    <div class="row">
+                        <div class="col s12">
+                            <h4>JSON Response</h4>
+                        </div>
+                        <div class=" col s12">
+                            <div class="json-response-container card-panel hoverable">
+                                <pre id="jsonResponse" class="json-response"></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12">
+                            <h5>GET Verb</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 m6 l3">
+                            <a id="getPosts" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>GET Posts
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="getPostOne" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>GET Post 1
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="getPostOneComments" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>GET Post 1 Comments
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="getComments" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>GET Comments
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="getCommentsPostOne" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>GET Comments Post 1
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="getAlbums" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>GET Albums
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="getPhotos" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>GET Photos
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="getToDos" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>GET to Do's
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 m6 l3">
+                            <a id="getUsers" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>GET Users
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 m6 l3">
+                            <h5>Other Verbs</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 m6 l3">
+                            <a id="PostPosts" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>POST Posts
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="PutPostOne" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>PUT Post 1
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="PatchPostOne" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>PATCH Post 1
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <a id="DeletePostOne" class="waves-effect waves-light btn">
+                                <i class="material-icons right">send</i>DELETE Post 1
+                            </a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                </div>
+                <div class="col l4 offset-l2 s12">
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                André Rosa 2018
+                <a class="grey-text text-lighten-4 right" href="https://github.com/andreros" target="_blank">andreros@github</a>
+            </div>
+        </div>
+    </footer>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>
