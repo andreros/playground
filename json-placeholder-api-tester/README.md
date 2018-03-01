@@ -1,5 +1,9 @@
 # JSONPlaceholder API Tester 
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/playground/json-placeholder-api-tester/master/src/img/json-placeholder-api-tester.png" width="600">
+</p>
+
 Simple application to test JSONPlaceholder, a fake online REST API for Testing and Prototyping. For further information,
 please visit [http://jsonplaceholder.typicode.com/](http://jsonplaceholder.typicode.com/).
 
