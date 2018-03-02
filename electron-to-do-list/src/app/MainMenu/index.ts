@@ -1,14 +1,15 @@
+import { AddTaskWindow } from '../AddTaskWindow';
+import { ToDoListApp } from '../ToDoListApp';
 import { Window } from '../window';
-import { AddTask } from '../addTask';
 
 export class MainMenu {
 
-    private application: Electron.App;
-    private addTaskWindow: AddTask;
+    private toDoListApp: ToDoListApp;
 
-    constructor(application: Electron.App) {
-        this.application = application;
-        this.addTaskWindow = new AddTask();
+    constructor(toDoListApp: ToDoListApp) {
+        const addTaskWindow = new AddTaskWindow();
+        toDoListApp.setAddTaskWindow(addTaskWindow);
+        this.toDoListApp = toDoListApp;
     }
 
     public getMainMenu = () => {
@@ -22,7 +23,7 @@ export class MainMenu {
                         label: 'Quit',
                         accelerator: process.platform === 'darwin' ? 'Alt+Q' : 'Ctrl+Q',
                         click: () => {
-                            this.application.quit();
+                            this.toDoListApp.quit();
                         }
                     }
                 ]
@@ -37,7 +38,7 @@ export class MainMenu {
                     label: 'Add New Task',
                     accelerator: process.platform === 'darwin' ? 'Alt+I' : 'Ctrl+I',
                     click: () => {
-                        this.addTaskWindow.open();
+                        this.toDoListApp.getAddTaskWindow().open();
                     }
                 }
             ]

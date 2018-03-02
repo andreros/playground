@@ -11,7 +11,7 @@
         <!-- handle the viewport -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>To Do List</title>
+        <title>To Do List - Add New Task</title>
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" media="screen,projection" />
@@ -20,7 +20,14 @@
     <body>
 
         <div class="container">
-
+            <form>
+                <div>
+                    <label>Enter Task</label>
+                    <input type="text" id="task" autofocus>
+                </div>
+                <button id="addTaskBtn" class="btn waves-effect waves-light" type="submit"> Add task </button>
+                <button id="closeBtn" class="btn waves-effect waves-light" type="button"> Cancel </button>
+            </form>
         </div>
 
         <script type="text/javascript">var jQuery = window.$ = window.jQuery = require('jquery'); var Hammer = require('hammerjs');</script>

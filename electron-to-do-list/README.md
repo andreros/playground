@@ -1,23 +1,10 @@
-# Electron Typescript Boilerplate
+# Electron To Do List
 
-Boilerplate for building an Electron application written in Typescript, with SASS for CSS and Handlebars for HTML templating.
+To Do List application built with Electron, Typescript, SASS / Materialize for CSS and Handlebars for HTML templating.
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/andreros/electron-typescript-boilerplate/master/src/assets/img/electron-typescript-boilerplate.png" width="600">
 </p>
-
-
-## Motivation
-
-Derived from the [TypeScript Boilerplate](https://github.com/andreros/typescript-boilerplate) project, the creation of this 
-boilerplate project comes both from the necessity of learning how to properly assemble, configure and troubleshoot an Electron 
-application coded in TypeScript, including all the needed dependencies and specificities, as well as, have a ready-to-go code 
-base for new projects to come.
-
-This project also intends to be a comprehensive guide to anyone wanting to follow the same path and assemble his own
-project from scratch. If you are planning to do so, please take a look at the
-[project documentation](https://andreros.github.io/electron-typescript-boilerplate/).
-
 
 ## Prerequisites
 
@@ -67,7 +54,7 @@ browser should open a window with the project running from [http://localhost:300
 
 ## Run Your Application
 
-To run your application, from the project directory run the command `gulp` or `gulp default`. The application 
+To run your application, from the project directory run the command `gulp` or `gulp default`. The application
 will build and executed by Electron. If all went well, a window with your application will open.
 
 ## Pack Your Application for Distribution

@@ -1,4 +1,5 @@
 import { ipcRenderer } from 'electron';
+import { Constants } from '../constants';
 
 /**
  * Class tied to the To Do List App Task index.html file. This class controls all the interaction with the
@@ -8,50 +9,64 @@ export class ToDoListAppRenderer {
 
     private rootElement: HTMLElement;
 
+    /**
+     * Class constructor.
+     * @param {HTMLElement} rootElement The page root element.
+     */
     constructor(rootElement: HTMLElement) {
         this.rootElement = rootElement;
+        // const ul = document.querySelector('ul');
         this.registerEvents();
     }
 
-    private registerEvents = (): void => {
-        // to implement
-        ipcRenderer.on(this.handlers().taskAdd.event, this.handlers().taskAdd.callback);
-    }
-
+    /**
+     * Event handlers object.
+     */
     private handlers = (): any => {
         return {
             taskAdd: {
-                event: 'task:add',
+                event: Constants.EVENTS.TASKS.ADD,
                 callback: this.onTaskAdd
+            },
+            tasksClear: {
+                event: Constants.EVENTS.TASKS.CLEAR,
+                callback: this.onTasksClear
             }
         };
     }
 
-    private onTaskAdd = (e: Event, params: any): void => {
-        console.log('on task add: ', e, params);
+    /**
+     * Method responsible for registering the renderer class events.
+     */
+    private registerEvents = (): void => {
+        ipcRenderer.on(this.handlers().taskAdd.event, this.handlers().taskAdd.callback);
     }
 
-    // const ul = document.querySelector('ul');
+    /**************************************************************************************************************************************/
+    /* Event handlers
+    /**************************************************************************************************************************************/
 
-    // // Add task
+    /**
+     * Event handler for the add task event.
+     */
+    private onTaskAdd = (e: Event, params: any): void => {
+        console.log('on task add: ', e, params);
+        // ul.className = 'collection';
+        // const li = document.createElement('li');
+        // li.className = 'collection-item';
+        // const taskText = document.createTextNode(task);
+        // li.appendChild(taskText);
+        // ul.appendChild(li);
+    }
 
-    // ipcRenderer.on('task:add', function (e, task) {
-    //     // ul.className = 'collection';
-    //     // const li = document.createElement('li');
-    //     // li.className = 'collection-item';
-    //     // const taskText = document.createTextNode(task);
-    //     // li.appendChild(taskText);
-    //     // ul.appendChild(li);
-
-    //     console.log('on task add: ', e, task);
-    // });
-
-    // // Clear tasks
-
-    // ipcRenderer.on('task:clear', function () {
-    //     ul.innerHTML = '';
-    //     ul.className = '';
-    // })
+    /**
+     * Event handler for the tasks clear event.
+     */
+    private onTasksClear = (e: Event, params: any): void => {
+        console.log('on tasks clear: ', e, params);
+        // ul.innerHTML = '';
+        // ul.className = '';
+    }
 
     // // Remove Task
 
@@ -61,7 +76,6 @@ export class ToDoListAppRenderer {
     //     e.target.remove();
     //     if(ul.children.length == 0)
     //         ul.className = '';
-
     // }
 
 }
