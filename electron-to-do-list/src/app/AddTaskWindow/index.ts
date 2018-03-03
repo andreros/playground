@@ -37,17 +37,15 @@ export class AddTaskWindow {
     public open = (): void => {
         if (!this.addTaskWindow) {
             this.addTaskWindow = Window.getWindow({
-                width: 1000,
-                height: 600,
-                // frame: false,
+                width: 800,
+                height: 270,
+                resizable: false,
                 target: 'app/AddTaskWindow/index.html'
             });
-
             // handle window closing
             this.addTaskWindow.on(this.handlers().windowClose.event, this.handlers().windowClose.callback);
-
-            // to be deleted
-            this.addTaskWindow.webContents.openDevTools();
+            // uncomment next line for debugging purposes
+            // this.addTaskWindow.webContents.openDevTools();
         }
     }
 

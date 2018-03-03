@@ -8,6 +8,7 @@ import { Constants } from '../constants';
 export class ToDoListAppRenderer {
 
     private rootElement: HTMLElement;
+    private deleteButtons: NodeListOf<HTMLElement>;
 
     /**
      * Class constructor.
@@ -15,6 +16,8 @@ export class ToDoListAppRenderer {
      */
     constructor(rootElement: HTMLElement) {
         this.rootElement = rootElement;
+        this.deleteButtons = this.rootElement.querySelectorAll('.btn-delete-task');
+        console.log('this.deleteButtons: ', this.deleteButtons);
         // const ul = document.querySelector('ul');
         this.registerEvents();
     }
@@ -40,6 +43,11 @@ export class ToDoListAppRenderer {
      */
     private registerEvents = (): void => {
         ipcRenderer.on(this.handlers().taskAdd.event, this.handlers().taskAdd.callback);
+        this.deleteButtons.forEach(deleteButton => {
+            deleteButton.addEventListener('click', (e: Event) => {
+                (<HTMLElement>e.currentTarget).closest('tr').remove();
+            });
+        });
     }
 
     /**************************************************************************************************************************************/

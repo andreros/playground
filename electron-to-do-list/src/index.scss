@@ -3,7 +3,5 @@
 @import "theme";
 
 // components styles import
-@import "components/header/header";
-@import "components/footer/footer";
-@import "components/app/app";
-
+@import "app/AddTaskWindow/index";
+@import "app/ToDoListApp/index";

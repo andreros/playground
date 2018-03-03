@@ -8,9 +8,8 @@ import { Constants } from '../constants';
 export class AddTaskRenderer {
 
     private rootElement: HTMLElement;
-    private form: HTMLElement;
-    private addTaskBtn: HTMLElement;
-    private closeBtn: HTMLElement;
+    private addBtn: HTMLElement;
+    private cancelBtn: HTMLElement;
 
     /**
      * Class constructor.
@@ -18,9 +17,8 @@ export class AddTaskRenderer {
      */
     constructor(rootElement: HTMLElement) {
         this.rootElement = rootElement;
-        this.form = this.rootElement.querySelector('form');
-        this.addTaskBtn = this.rootElement.querySelector('#addTaskBtn');
-        this.closeBtn = this.rootElement.querySelector('#closeBtn');
+        this.addBtn = this.rootElement.querySelector('#addBtn');
+        this.cancelBtn = this.rootElement.querySelector('#cancelBtn');
         this.registerEvents();
     }
 
@@ -29,13 +27,13 @@ export class AddTaskRenderer {
      */
     private handlers = (): any => {
         return {
-            formSubmit: {
-                event: 'submit',
-                callback: this.onFormSubmit
-            },
-            closeButtonClick: {
+            addButtonClick: {
                 event: 'click',
-                callback: this.onCloseButtonClick
+                callback: this.onAddButtonClick
+            },
+            cancelButtonClick: {
+                event: 'click',
+                callback: this.onCancelButtonClick
             }
         };
     }
@@ -44,8 +42,8 @@ export class AddTaskRenderer {
      * Method responsible for registering the renderer class events.
      */
     private registerEvents = (): void => {
-        this.form.addEventListener(this.handlers().formSubmit.event, this.handlers().formSubmit.callback);
-        this.closeBtn.addEventListener(this.handlers().closeButtonClick.event, this.handlers().closeButtonClick.callback);
+        this.addBtn.addEventListener(this.handlers().addButtonClick.event, this.handlers().addButtonClick.callback);
+        this.cancelBtn.addEventListener(this.handlers().cancelButtonClick.event, this.handlers().cancelButtonClick.callback);
     }
 
     /**************************************************************************************************************************************/
@@ -53,20 +51,22 @@ export class AddTaskRenderer {
     /**************************************************************************************************************************************/
 
     /**
-     * Event handler for the form "submit" event.
+     * Event handler for the add button "click" event.
      */
-    private onFormSubmit = (e: Event) => {
+    private onAddButtonClick = (e: Event) => {
         e.preventDefault();
-        const task = (<HTMLInputElement>this.rootElement.querySelector('#task')).value;
-        // console.log('ipc renderer before send: ', ipcRenderer);
-        ipcRenderer.send(Constants.EVENTS.TASKS.ADD, task);
-        console.log('ipc renderer after send | task: ', task);
+        const taskName = (<HTMLInputElement>this.rootElement.querySelector('#taskName')).value;
+        ipcRenderer.send(Constants.EVENTS.TASKS.ADD, taskName);
+        const timeout = setTimeout(() => {
+            clearTimeout(timeout);
+            ipcRenderer.send(Constants.EVENTS.TASKS.CLOSE_ADD_WINDOW);
+        }, 250);
     }
 
     /**
-     * Event handler for the close window "click" event.
+     * Event handler for the cancel button "click" event.
      */
-    private onCloseButtonClick = (e: Event) => {
+    private onCancelButtonClick = (e: Event) => {
         ipcRenderer.send(Constants.EVENTS.TASKS.CLOSE_ADD_WINDOW);
     }
 

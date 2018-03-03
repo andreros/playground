@@ -98,8 +98,8 @@ export class ToDoListApp {
         this.appMainWindow.on(this.handlers().mainWindowClose.event, this.handlers().mainWindowClose.callback);
         this.appMainMenu = Menu.buildFromTemplate(this.mainMenu.getMainMenu());
         Menu.setApplicationMenu(this.appMainMenu);
-
-        this.appMainWindow.webContents.openDevTools();
+        // uncomment next line for debugging purposes
+        // this.appMainWindow.webContents.openDevTools();
     }
 
     /**

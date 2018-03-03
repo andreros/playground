@@ -1,0 +1,8 @@
+{
+    "addTask": {
+        "addTask": "Add New Task",
+        "taskLabel": "Task",
+        "cancel": "Cancel",
+        "add": "Add"
+    }
+}

@@ -1,0 +1,26 @@
+.toDoListApp {
+
+    main {
+        height: calc(100vh - 64px - 91px);
+        overflow-y: scroll;
+    }
+
+    table {
+        .actions {
+            width: 50px;
+            word-break: keep-all;
+            white-space: nowrap;
+        }
+
+        .numbers {
+            width: 50px;
+            word-break: keep-all;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .material-icons {
+            font-size: 1.4rem;
+        }
+    }
+}

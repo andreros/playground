@@ -19,16 +19,7 @@
     </head>
     <body>
 
-        <div class="container">
-            <form>
-                <div>
-                    <label>Enter Task</label>
-                    <input type="text" id="task" autofocus>
-                </div>
-                <button id="addTaskBtn" class="btn waves-effect waves-light" type="submit"> Add task </button>
-                <button id="closeBtn" class="btn waves-effect waves-light" type="button"> Cancel </button>
-            </form>
-        </div>
+        {{> app/AddTaskWindow/addTask}}
 
         <script type="text/javascript">var jQuery = window.$ = window.jQuery = require('jquery'); var Hammer = require('hammerjs');</script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

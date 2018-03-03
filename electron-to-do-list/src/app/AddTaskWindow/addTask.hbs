@@ -1,0 +1,31 @@
+{{#addTask}}
+<div class="addTaskWindow">
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="javascript:void();" class="brand-logo">&nbsp;&nbsp;{{addTask}}</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <br/>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="taskName">
+                        <label for="taskName">{{taskLabel}}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 right-align">
+                        <button id="cancelBtn" class="btn waves-effect waves-light red lighten-2" type="button">{{cancel}}</button>
+                        <button id="addBtn" class="btn waves-effect waves-light" type="button">{{add}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+{{/addTask}}
