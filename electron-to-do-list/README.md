@@ -2,8 +2,22 @@
 
 To Do List application built with Electron, Typescript, SASS / Materialize for CSS and Handlebars for HTML templating.
 
+## Main Window
+
 <p align="center">
-    <img src="https://raw.githubusercontent.com/andreros/electron-typescript-boilerplate/master/src/assets/img/electron-typescript-boilerplate.png" width="600">
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/to-do-list-main-window.png" width="600">
+</p>
+
+## Add Task Window
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/to-do-list-add-task-window.png" width="600">
+</p>
+
+## About Window
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/to-do-list-about-window.png" width="600">
 </p>
 
 ## Prerequisites
