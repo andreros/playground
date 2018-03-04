@@ -2,8 +2,10 @@
 <div class="toDoListApp">
     <header>
         <nav>
-            <div class="nav-wrapper">
-                <a href="javascript:void();" class="brand-logo">&nbsp;&nbsp;{{name}}</a>
+            <div class="nav-wrapper blue darken-1">
+                <a href="javascript:void();" class="brand-logo">
+                    <i class="material-icons">dvr</i>{{title}}
+                </a>
             </div>
         </nav>
     </header>
@@ -13,6 +15,17 @@
         <div class="row">
             <div class="col s12">
                 <h5>{{taskListTitle}}</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <button id="addNewTask" class="btn waves-effect waves-light blue" type="button">
+                    <i class="material-icons left">add</i>{{addNewTask}}
+                </button>
+                <button id="clearTaskList" class="btn waves-effect waves-light blue" type="button">
+                    <i class="material-icons left">clear_all</i>{{clearTaskList}}
+                </button>
             </div>
         </div>
 
@@ -34,8 +47,8 @@
                                     <i class="material-icons">delete</i>
                                 </button>
                             </td>
-                            <td class="numbers">1</td>
-                            <td>Task 1</td>
+                            <td class="taskNumber numbers">1</td>
+                            <td class="taskName">Task 1</td>
                         </tr>
                         <tr>
                             <td>
@@ -43,8 +56,8 @@
                                     <i class="material-icons">delete</i>
                                 </button>
                             </td>
-                            <td class="numbers">2</td>
-                            <td>Task 2</td>
+                            <td class="taskNumber numbers">2</td>
+                            <td class="taskName">Task 2</td>
                         </tr>
                         <tr>
                             <td>
@@ -52,62 +65,16 @@
                                     <i class="material-icons">delete</i>
                                 </button>
                             </td>
-                            <td class="numbers">3</td>
-                            <td>Task 3</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button class="btn-floating btn-delete-task waves-effect waves-light black" type="button">
-                                    <i class="material-icons">delete</i>
-                                </button>
-                            </td>
-                            <td class="numbers">4</td>
-                            <td>Task 4</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button class="btn-floating btn-delete-task waves-effect waves-light black" type="button">
-                                    <i class="material-icons">delete</i>
-                                </button>
-                            </td>
-                            <td class="numbers">5</td>
-                            <td>Task 5</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button class="btn-floating btn-delete-task waves-effect waves-light black" type="button">
-                                    <i class="material-icons">delete</i>
-                                </button>
-                            </td>
-                            <td class="numbers">6</td>
-                            <td>Task 6</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button class="btn-floating btn-delete-task waves-effect waves-light black" type="button">
-                                    <i class="material-icons">delete</i>
-                                </button>
-                            </td>
-                            <td class="numbers">7</td>
-                            <td>Task 7</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button class="btn-floating btn-delete-task waves-effect waves-light black" type="button">
-                                    <i class="material-icons">delete</i>
-                                </button>
-                            </td>
-                            <td class="numbers">8</td>
-                            <td>Task 8</td>
+                            <td class="taskNumber numbers">3</td>
+                            <td class="taskName">Task 3</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-
     </main>
 
-    <footer class="page-footer">
+    <footer class="page-footer blue">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
@@ -116,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copyright">
+        <div class="footer-copyright blue darken-1">
             <div class="container">
                 André Rosa 2018
                 <a class="grey-text text-lighten-4 right" href="https://github.com/andreros" target="_blank">andreros@github</a>

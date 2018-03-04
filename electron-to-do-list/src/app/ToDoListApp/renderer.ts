@@ -1,4 +1,5 @@
 import { ipcRenderer } from 'electron';
+import * as handlebars from 'handlebars';
 import { Constants } from '../constants';
 
 /**
@@ -8,7 +9,10 @@ import { Constants } from '../constants';
 export class ToDoListAppRenderer {
 
     private rootElement: HTMLElement;
-    private deleteButtons: NodeListOf<HTMLElement>;
+    private taskList: HTMLElement;
+    private addNewTask: HTMLElement;
+    private clearTaskList: HTMLElement;
+    private deleteTaskButtons: NodeListOf<HTMLElement>;
 
     /**
      * Class constructor.
@@ -16,9 +20,10 @@ export class ToDoListAppRenderer {
      */
     constructor(rootElement: HTMLElement) {
         this.rootElement = rootElement;
-        this.deleteButtons = this.rootElement.querySelectorAll('.btn-delete-task');
-        console.log('this.deleteButtons: ', this.deleteButtons);
-        // const ul = document.querySelector('ul');
+        this.taskList = this.rootElement.querySelector('#taskList');
+        this.addNewTask = this.rootElement.querySelector('#addNewTask');
+        this.clearTaskList = this.rootElement.querySelector('#clearTaskList');
+        this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
         this.registerEvents();
     }
 
@@ -27,12 +32,24 @@ export class ToDoListAppRenderer {
      */
     private handlers = (): any => {
         return {
-            taskAdd: {
+            ipcTaskAdd: {
                 event: Constants.EVENTS.TASKS.ADD,
                 callback: this.onTaskAdd
             },
-            tasksClear: {
+            ipcTasksClear: {
                 event: Constants.EVENTS.TASKS.CLEAR,
+                callback: this.onTasksClear
+            },
+            taskAddNew: {
+                event: 'click',
+                callback: this.onTaskAddNew
+            },
+            taskDelete: {
+                event: 'click',
+                callback: this.onTaskDelete
+            },
+            tasksClear: {
+                event: 'click',
                 callback: this.onTasksClear
             }
         };
@@ -42,12 +59,49 @@ export class ToDoListAppRenderer {
      * Method responsible for registering the renderer class events.
      */
     private registerEvents = (): void => {
-        ipcRenderer.on(this.handlers().taskAdd.event, this.handlers().taskAdd.callback);
-        this.deleteButtons.forEach(deleteButton => {
-            deleteButton.addEventListener('click', (e: Event) => {
-                (<HTMLElement>e.currentTarget).closest('tr').remove();
-            });
+        ipcRenderer.on(this.handlers().ipcTaskAdd.event, this.handlers().ipcTaskAdd.callback);
+        ipcRenderer.on(this.handlers().ipcTasksClear.event, this.handlers().ipcTasksClear.callback);
+        this.addNewTask.addEventListener(this.handlers().taskAddNew.event, this.handlers().taskAddNew.callback);
+        this.clearTaskList.addEventListener(this.handlers().tasksClear.event, this.handlers().tasksClear.callback);
+        this.deleteTaskButtons.forEach(deleteTaskButton => {
+            deleteTaskButton.addEventListener(this.handlers().taskDelete.event, this.handlers().taskDelete.callback);
         });
+    }
+
+    /**
+     * Method responsible for registering the renderer class events.
+     */
+    private deRegisterEvents = (): void => {
+        ipcRenderer.removeAllListeners(this.handlers().ipcTaskAdd.event);
+        ipcRenderer.removeAllListeners(this.handlers().ipcTasksClear.event);
+        this.addNewTask.removeEventListener(this.handlers().taskAddNew.event, this.handlers().taskAddNew.callback);
+        this.clearTaskList.removeEventListener(this.handlers().tasksClear.event, this.handlers().tasksClear.callback);
+        this.deleteTaskButtons.forEach(deleteTaskButton => {
+            deleteTaskButton.removeEventListener(this.handlers().taskDelete.event, this.handlers().taskDelete.callback);
+        });
+    }
+
+    /**
+     * Method responsible for updating the task numbers in the task list.
+     */
+    private updateTaskListNumbers = (): void => {
+        const rows = this.taskList.querySelectorAll('tr');
+        let index = 1;
+        rows.forEach(row => {
+            const taskNumber = row.querySelector('.taskNumber');
+            taskNumber.innerHTML = index.toString();
+            index++;
+        });
+        if (rows.length === 0) {
+            this.taskList.appendChild(this.getTableEmptyRow());
+        }
+    }
+
+    private getTableEmptyRow = (): HTMLTableRowElement => {
+        const tr = document.createElement('tr');
+        tr.classList.add('empty');
+        tr.innerHTML = '<td colspan="3">There are no tasks to display.</td>';
+        return tr;
     }
 
     /**************************************************************************************************************************************/
@@ -58,33 +112,54 @@ export class ToDoListAppRenderer {
      * Event handler for the add task event.
      */
     private onTaskAdd = (e: Event, params: any): void => {
-        console.log('on task add: ', e, params);
-        // ul.className = 'collection';
-        // const li = document.createElement('li');
-        // li.className = 'collection-item';
-        // const taskText = document.createTextNode(task);
-        // li.appendChild(taskText);
-        // ul.appendChild(li);
+        // read handlebars task row template file
+        const fs = require('fs'),
+              path = require('path');
+        fs.readFile(path.join(__dirname, 'taskTableRow.hbs'), 'utf8', (err: string, data: any) => {
+            const emptyRow = this.taskList.querySelector('.empty');
+            if (emptyRow) { emptyRow.remove(); }
+            // compile the template
+            const template = handlebars.compile(data);
+            // call template as a function, passing in your data as the context
+            const row = template({ taskName: params });
+            // append it to the task list table
+            const tr = document.createElement('tr');
+            tr.innerHTML = row;
+            this.taskList.appendChild(tr);
+            // re-register event listeners
+            this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
+            this.deRegisterEvents();
+            this.registerEvents();
+            // update task numbers in task list
+            this.updateTaskListNumbers();
+        });
+    }
+
+    /**
+     * Event handler for the add new task button "click" event.
+     */
+    private onTaskAddNew = (e: Event): void => {
+        ipcRenderer.send(Constants.EVENTS.TASKS.OPEN_ADD_WINDOW);
+    }
+
+    /**
+     * Event handler for the delete task button "click" event.
+     */
+    private onTaskDelete = (e: Event): void => {
+        (<HTMLElement>e.currentTarget).closest('tr').remove();
+        this.updateTaskListNumbers();
     }
 
     /**
      * Event handler for the tasks clear event.
      */
-    private onTasksClear = (e: Event, params: any): void => {
-        console.log('on tasks clear: ', e, params);
-        // ul.innerHTML = '';
-        // ul.className = '';
+    private onTasksClear = (e: Event): void => {
+        this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
+        this.deRegisterEvents();
+        this.taskList.innerHTML = '';
+        this.taskList.appendChild(this.getTableEmptyRow());
+        this.registerEvents();
     }
-
-    // // Remove Task
-
-    // //ul.addEventListener('dblclick', removeItem);
-
-    // function removeItem(e) {
-    //     e.target.remove();
-    //     if(ul.children.length == 0)
-    //         ul.className = '';
-    // }
 
 }
 

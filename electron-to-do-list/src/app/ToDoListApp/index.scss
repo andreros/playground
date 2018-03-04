@@ -1,5 +1,11 @@
 .toDoListApp {
 
+    nav {
+        .material-icons {
+            margin-left: 30px;
+        }
+    }
+
     main {
         height: calc(100vh - 64px - 91px);
         overflow-y: scroll;

@@ -1,5 +1,6 @@
 import { BrowserWindow, Menu, app, ipcMain } from 'electron';
 import { AddTaskWindow } from '../AddTaskWindow';
+import { AboutWindow } from '../AboutWindow';
 import { MainMenu } from '../mainMenu';
 import { Window } from '../window';
 import { Constants } from '../constants';
@@ -10,6 +11,7 @@ export class ToDoListApp {
     private appMainMenu: Electron.Menu;
     private appMainWindow: Electron.BrowserWindow;
     private addTaskWindow: AddTaskWindow;
+    private aboutWindow: AboutWindow;
     private mainMenu: MainMenu;
     private ipcMain: Electron.IpcMain;
 
@@ -19,6 +21,8 @@ export class ToDoListApp {
     constructor() {
         this.app = app;
         this.mainMenu = new MainMenu(this);
+        this.addTaskWindow = new AddTaskWindow(this);
+        this.aboutWindow = new AboutWindow(this);
         this.ipcMain = ipcMain;
         this.registerEvents();
     }
@@ -32,6 +36,10 @@ export class ToDoListApp {
                 event: 'ready',
                 callback: this.onApplicationReady
             },
+            mainWindowReadyToShow: {
+                event: 'ready-to-show',
+                callback: this.onMainWindowReadyToShow
+            },
             mainWindowClose: {
                 event: 'close',
                 callback: this.onMainWindowClose
@@ -44,9 +52,17 @@ export class ToDoListApp {
                 event: Constants.EVENTS.TASKS.ADD,
                 callback: this.onTaskAdd
             },
+            taskAddWindowOpen: {
+                event: Constants.EVENTS.TASKS.OPEN_ADD_WINDOW,
+                callback: this.onTaskAddWindowOpen
+            },
             taskAddWindowClose: {
                 event: Constants.EVENTS.TASKS.CLOSE_ADD_WINDOW,
                 callback: this.onTaskAddWindowClose
+            },
+            aboutWindowClose: {
+                event: Constants.EVENTS.ABOUT.CLOSE_WINDOW,
+                callback: this.onAboutWindowClose
             }
         };
     }
@@ -58,7 +74,16 @@ export class ToDoListApp {
         this.app.on(this.handlers().appReady.event, this.handlers().appReady.callback);
         this.app.on(this.handlers().windowAllClosed.event, this.handlers().windowAllClosed.callback);
         this.ipcMain.on(this.handlers().taskAdd.event, this.handlers().taskAdd.callback);
+        this.ipcMain.on(this.handlers().taskAddWindowOpen.event, this.handlers().taskAddWindowOpen.callback);
         this.ipcMain.on(this.handlers().taskAddWindowClose.event, this.handlers().taskAddWindowClose.callback);
+        this.ipcMain.on(this.handlers().aboutWindowClose.event, this.handlers().aboutWindowClose.callback);
+    }
+
+    /**
+     * To Do List Main window getter.
+     */
+    public getMainWindow = (): Electron.BrowserWindow => {
+        return this.appMainWindow;
     }
 
     /**
@@ -69,10 +94,17 @@ export class ToDoListApp {
     }
 
     /**
-     * Add Task window setter.
+     * About window getter.
      */
-    public setAddTaskWindow = (addTaskWindow: AddTaskWindow): void => {
-        this.addTaskWindow = addTaskWindow;
+    public getAboutWindow = (): AboutWindow => {
+        return this.aboutWindow;
+    }
+
+    /**
+     * Event handler for the tasks clear event.
+     */
+    public clearTaskList = (): void => {
+        this.appMainWindow.webContents.send(Constants.EVENTS.TASKS.CLEAR);
     }
 
     /**
@@ -91,15 +123,28 @@ export class ToDoListApp {
      */
     private onApplicationReady = (): void => {
         this.appMainWindow = Window.getWindow({
-            width: 1366,
-            height: 768,
-            target: 'app/ToDoListApp/index.html'
+            titleBarStyle: 'hidden',
+            backgroundColor: Constants.MAIN_WINDOW.BACKGROUND_COLOR,
+            show: Constants.MAIN_WINDOW.SHOW,
+            width: Constants.MAIN_WINDOW.WIDTH,
+            height: Constants.MAIN_WINDOW.HEIGHT,
+            minWidth: Constants.MAIN_WINDOW.MIN_WIDTH,
+            minHeight: Constants.MAIN_WINDOW.MIN_HEIGHT,
+            target: Constants.MAIN_WINDOW.TARGET
         });
+        this.appMainWindow.once(this.handlers().mainWindowReadyToShow.event, this.handlers().mainWindowReadyToShow.callback);
         this.appMainWindow.on(this.handlers().mainWindowClose.event, this.handlers().mainWindowClose.callback);
         this.appMainMenu = Menu.buildFromTemplate(this.mainMenu.getMainMenu());
         Menu.setApplicationMenu(this.appMainMenu);
         // uncomment next line for debugging purposes
         // this.appMainWindow.webContents.openDevTools();
+    }
+
+    /**
+     * Event handler for the main window "ready-to-show" event.
+     */
+    private onMainWindowReadyToShow = (): void => {
+        this.appMainWindow.show();
     }
 
     /**
@@ -124,10 +169,24 @@ export class ToDoListApp {
     }
 
     /**
+     * Event handler for the add task window open event.
+     */
+    private onTaskAddWindowOpen = (e: Event, args: any): void => {
+        this.addTaskWindow.open();
+    }
+
+    /**
      * Event handler for the add task window close event.
      */
     private onTaskAddWindowClose = (e: Event, args: any): void => {
         this.addTaskWindow.close();
+    }
+
+    /**
+     * Event handler for the about window close event.
+     */
+    private onAboutWindowClose = (e: Event, args: any): void => {
+        this.aboutWindow.close();
     }
 
 }

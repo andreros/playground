@@ -111,6 +111,9 @@ gulp.task('build:json', function () {
  * This task is responsible for compiling Handlebars templates into HTML.
  */
 gulp.task('build:html', ['build:json'], function () {
+    gulp.src(SRC_FOLDER + '/**/*.hbs')
+        .pipe(gulp.dest(DIST_FOLDER));
+
     var content = fs.readFileSync(DIST_FOLDER + '/index.json');
     var templateData = JSON.parse(content);
 

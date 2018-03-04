@@ -1,6 +1,6 @@
 {
-    "addTask": {
-        "addTask": "Add New Task",
+    "addTaskWindow": {
+        "title": "Add New Task",
         "taskLabel": "Task",
         "cancel": "Cancel",
         "add": "Add"

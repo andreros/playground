@@ -1,9 +1,9 @@
-{{#addTask}}
+{{#addTaskWindow}}
 <div class="addTaskWindow">
     <header>
         <nav>
-            <div class="nav-wrapper">
-                <a href="javascript:void();" class="brand-logo">&nbsp;&nbsp;{{addTask}}</a>
+            <div class="nav-wrapper blue darken-1">
+                <a href="javascript:void();" class="brand-logo">&nbsp;&nbsp;{{title}}</a>
             </div>
         </nav>
     </header>
@@ -11,16 +11,16 @@
     <main>
         <br/>
         <div class="row">
-            <form class="col s12">
+            <form class="col s12" onsubmit="return false;">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" id="taskName">
+                        <input type="text" id="taskName" autofocus>
                         <label for="taskName">{{taskLabel}}</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12 right-align">
-                        <button id="cancelBtn" class="btn waves-effect waves-light red lighten-2" type="button">{{cancel}}</button>
+                    <div class="col s12 right-align">
+                        <button id="cancelBtn" class="btn waves-effect waves-light blue" type="button">{{cancel}}</button>
                         <button id="addBtn" class="btn waves-effect waves-light" type="button">{{add}}</button>
                     </div>
                 </div>
@@ -28,4 +28,4 @@
         </div>
     </main>
 </div>
-{{/addTask}}
+{{/addTaskWindow}}

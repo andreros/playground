@@ -1,0 +1,8 @@
+{
+    "aboutWindow": {
+        "title": "About",
+        "appTitle": "To Do List",
+        "appDescription": "Example application for a To Do List.<br/>By André Rosa (<a href='http://www.github.com/andreros/' target='_blank'>andreros@github</a>), 2018.",
+        "close": "Close"
+    }
+}

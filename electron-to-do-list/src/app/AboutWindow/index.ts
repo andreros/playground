@@ -3,10 +3,10 @@ import { ToDoListApp } from '../ToDoListApp';
 import { Window } from '../window';
 import { Constants } from '../constants';
 
-export class AddTaskWindow {
+export class AboutWindow {
 
     private toDoListApp: ToDoListApp;
-    private addTaskWindow: Electron.BrowserWindow;
+    private aboutWindow: Electron.BrowserWindow;
 
     /**
      * Class constructor.
@@ -35,44 +35,44 @@ export class AddTaskWindow {
      * Method responsible for registering the renderer class events.
      */
     private registerEvents = (): void => {
-        this.addTaskWindow.on(this.handlers().windowReadyToShow.event, this.handlers().windowReadyToShow.callback);
-        this.addTaskWindow.on(this.handlers().windowClose.event, this.handlers().windowClose.callback);
+        this.aboutWindow.on(this.handlers().windowReadyToShow.event, this.handlers().windowReadyToShow.callback);
+        this.aboutWindow.on(this.handlers().windowClose.event, this.handlers().windowClose.callback);
     }
 
     /**
-     * Method responsible for destroying the add task window.
+     * Method responsible for destroying the about window.
      */
     public destroy = (): void => {
-        this.addTaskWindow = null;
+        this.aboutWindow = null;
     }
 
     /**
      * Method responsible for opening the add task window.
      */
     public open = (): void => {
-        if (!this.addTaskWindow) {
-            this.addTaskWindow = Window.getWindow({
+        if (!this.aboutWindow) {
+            this.aboutWindow = Window.getWindow({
                 parent: this.toDoListApp.getMainWindow(),
-                backgroundColor: Constants.ADD_TASK_WINDOW.BACKGROUND_COLOR,
-                modal: Constants.ADD_TASK_WINDOW.MODAL,
-                resizable: Constants.ADD_TASK_WINDOW.RESIZABLE,
-                show: Constants.ADD_TASK_WINDOW.SHOW,
-                width: Constants.ADD_TASK_WINDOW.WIDTH,
-                height: Constants.ADD_TASK_WINDOW.HEIGHT,
-                target: Constants.ADD_TASK_WINDOW.TARGET
+                backgroundColor: Constants.ABOUT_WINDOW.BACKGROUND_COLOR,
+                modal: Constants.ABOUT_WINDOW.MODAL,
+                resizable: Constants.ABOUT_WINDOW.RESIZABLE,
+                show: Constants.ABOUT_WINDOW.SHOW,
+                width: Constants.ABOUT_WINDOW.WIDTH,
+                height: Constants.ABOUT_WINDOW.HEIGHT,
+                target: Constants.ABOUT_WINDOW.TARGET
             });
             this.registerEvents();
             // uncomment next line for debugging purposes
-            // this.addTaskWindow.webContents.openDevTools();
+            // this.aboutWindow.webContents.openDevTools();
         }
     }
 
     /**
-     * Method responsible for closing the add task window.
+     * Method responsible for closing the about window.
      */
     public close = (): void => {
-        if (this.addTaskWindow) {
-            this.addTaskWindow.close();
+        if (this.aboutWindow) {
+            this.aboutWindow.close();
             this.destroy();
         }
     }
@@ -85,7 +85,7 @@ export class AddTaskWindow {
      * Event handler for the window "ready-to-show" event.
      */
     private onWindowReadyToShow = (e: Event): void => {
-        this.addTaskWindow.show();
+        this.aboutWindow.show();
     }
 
     /**
