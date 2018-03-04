@@ -63,8 +63,17 @@ Clone or download this project. From the project directory run the command `npm 
 
 ## Local Development
 
-To run the project in development mode, from the project directory run the command `npm run dev`. Your default
-browser should open a window with the project running from [http://localhost:3000/](http://localhost:3000/).
+To test the project in development mode, set the variable `process.env.NODE_ENV = 'development'`. This will put 
+Electron in development mode. From the project directory run the command `gulp` to launch your application.
+
+```javascript
+// set the process environment variable
+// process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'development';
+```
+
+While in development mode you will be able to reload the application by pressing the `opt+R` (mac or linux) or
+`ctrl+R` (windows).
 
 ## Run Your Application
 
@@ -80,6 +89,7 @@ system you are on:
 *  `npm run package-win`: Build a distribution version for Windows systems.
 *  `npm run package-linux`: Build a distribution version for Linux systems.
 
+
 ## Built With
 
 *  SASS CSS Pre-processor: [https://sass-lang.com/](https://sass-lang.com/)
@@ -87,16 +97,6 @@ system you are on:
 *  TypeScript Scripting Language: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
 *  Electron cross platform desktop apps with JavaScript, HTML, and CSS: [https://electronjs.org/](https://electronjs.org/)
 *  Gulp Task Automator: [https://gulpjs.com/](https://gulpjs.com/)
-*  Browser Sync Server Synchronizing Tool: [https://browsersync.io/](https://browsersync.io/)
-
-
-## Contributing
-
-1. Fork this project: [https://github.com/andreros/electron-typescript-boilerplate/fork](https://github.com/andreros/electron-typescript-boilerplate/fork)
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request
 
 
 ## Author
