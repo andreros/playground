@@ -14,6 +14,9 @@ examples laying in my hard drive just waiting to be added).
 An example of CSS Triangle as explained by Chris Coyier in CSS-Tricks.com. Please, read the full article 
 "[CSS Triangle by Chris Coyier (Sept. 29, 2016)](https://css-tricks.com/snippets/css/css-triangle/)".
 
+* [electron-json-placeholder-api-consumer](https://github.com/andreros/playground/tree/master/electron-json-placeholder-api-consumer) - 
+(Work in progress) JSONPlaceholder API consumer application built with Electron, Typescript, SASS / Materialize for CSS and Handlebars for HTML templating.
+
 * [electron-to-do-list](https://github.com/andreros/playground/tree/master/electron-to-do-list) - 
 To Do List application build with Electron, Typescript, Handlebars and SASS.
 

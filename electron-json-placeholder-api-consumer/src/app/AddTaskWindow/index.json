@@ -1,0 +1,8 @@
+{
+    "addTaskWindow": {
+        "title": "Add New Task",
+        "taskLabel": "Task",
+        "cancel": "Cancel",
+        "add": "Add"
+    }
+}

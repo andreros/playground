@@ -2,14 +2,14 @@
  * Class responsible for centralizing the application constants declaration.
  */
 export class Constants {
+    public static readonly API_BASE_URL: string = 'http://jsonplaceholder.typicode.com';
 
     /**
      * Application configurations.
      */
     public static readonly CONFIGURATIONS: any = {
-        DEFAULT_WINDOW_WIDTH: 1024,
-        DEFAULT_WINDOW_HEIGHT: 768,
-        DEFAULT_WINDOW_TARGET: 'index.html'
+        API_BASE_URL: Constants.API_BASE_URL,
+        POSTS: Constants.API_BASE_URL + '/posts'
     };
 
     /**
@@ -17,6 +17,7 @@ export class Constants {
      */
     public static readonly MAIN_WINDOW: any = {
         TARGET: 'app/ToDoListApp/index.html',
+        TITLEBAR_STYLE: 'hidden',
         BACKGROUND_COLOR: '#FFF',
         SHOW: false,
         WIDTH: 1366,
@@ -55,6 +56,9 @@ export class Constants {
      * Application events.
      */
     public static readonly EVENTS: any = {
+        POSTS: {
+            LOADED: 'posts:loaded'
+        },
         TASKS: {
             OPEN_ADD_WINDOW: 'tasks:open:add:window',
             CLOSE_ADD_WINDOW: 'tasks:close:add:window',

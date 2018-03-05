@@ -1,0 +1,8 @@
+{
+    "toDoListApp": {
+        "title": "To Do List",
+        "taskListTitle": "Tasks",
+        "addNewTask": "Add New Task",
+        "clearTaskList": "Clear Task List"
+    }
+}

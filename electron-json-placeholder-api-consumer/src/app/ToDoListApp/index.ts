@@ -2,6 +2,7 @@ import { BrowserWindow, Menu, app, ipcMain } from 'electron';
 import { AddTaskWindow } from '../AddTaskWindow';
 import { AboutWindow } from '../AboutWindow';
 import { MainMenu } from '../_helpers/MainMenu';
+import { Request } from '../_helpers/Request';
 import { Window } from '../_helpers/Window';
 import { Constants } from '../constants';
 
@@ -123,7 +124,7 @@ export class ToDoListApp {
      */
     private onApplicationReady = (): void => {
         this.appMainWindow = Window.getWindow({
-            titleBarStyle: 'hidden',
+            titleBarStyle: Constants.MAIN_WINDOW.TITLEBAR_STYLE,
             backgroundColor: Constants.MAIN_WINDOW.BACKGROUND_COLOR,
             show: Constants.MAIN_WINDOW.SHOW,
             width: Constants.MAIN_WINDOW.WIDTH,
@@ -145,6 +146,10 @@ export class ToDoListApp {
      */
     private onMainWindowReadyToShow = (): void => {
         this.appMainWindow.show();
+        // load posts
+        Request.executeRequest('GET', Constants.CONFIGURATIONS.POSTS, {}, (error: any, response: string) => {
+            this.appMainWindow.webContents.send(Constants.EVENTS.POSTS.LOADED, response);
+        });
     }
 
     /**

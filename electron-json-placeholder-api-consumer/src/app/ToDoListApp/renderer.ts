@@ -36,6 +36,10 @@ export class ToDoListAppRenderer {
                 event: Constants.EVENTS.TASKS.ADD,
                 callback: this.onTaskAdd
             },
+            ipcPostsLoaded: {
+                event: Constants.EVENTS.POSTS.LOADED,
+                callback: this.onPostsLoaded
+            },
             ipcTasksClear: {
                 event: Constants.EVENTS.TASKS.CLEAR,
                 callback: this.onTasksClear
@@ -60,6 +64,7 @@ export class ToDoListAppRenderer {
      */
     private registerEvents = (): void => {
         ipcRenderer.on(this.handlers().ipcTaskAdd.event, this.handlers().ipcTaskAdd.callback);
+        ipcRenderer.on(this.handlers().ipcPostsLoaded.event, this.handlers().ipcPostsLoaded.callback);
         ipcRenderer.on(this.handlers().ipcTasksClear.event, this.handlers().ipcTasksClear.callback);
         this.addNewTask.addEventListener(this.handlers().taskAddNew.event, this.handlers().taskAddNew.callback);
         this.clearTaskList.addEventListener(this.handlers().tasksClear.event, this.handlers().tasksClear.callback);
@@ -73,6 +78,7 @@ export class ToDoListAppRenderer {
      */
     private deRegisterEvents = (): void => {
         ipcRenderer.removeAllListeners(this.handlers().ipcTaskAdd.event);
+        ipcRenderer.removeAllListeners(this.handlers().ipcPostsLoaded.event);
         ipcRenderer.removeAllListeners(this.handlers().ipcTasksClear.event);
         this.addNewTask.removeEventListener(this.handlers().taskAddNew.event, this.handlers().taskAddNew.callback);
         this.clearTaskList.removeEventListener(this.handlers().tasksClear.event, this.handlers().tasksClear.callback);
@@ -93,42 +99,11 @@ export class ToDoListAppRenderer {
             index++;
         });
         if (rows.length === 0) {
-            this.taskList.appendChild(this.getTaskTableEmptyRow());
+            this.taskList.appendChild(this.getTableEmptyRow());
         }
     }
 
-    /**
-     * Method responsible for adding a row to the tasks table.
-     * @param {any} rowData The row data.
-     */
-    private addTaskTableRow = (rowData: any): void => {
-        // read handlebars task row template file
-        const fs = require('fs'),
-              path = require('path');
-        fs.readFile(path.join(__dirname, 'taskTableRow.hbs'), 'utf8', (err: string, data: any) => {
-            const emptyRow = this.taskList.querySelector('.empty');
-            if (emptyRow) { emptyRow.remove(); }
-            // compile the template
-            const template = handlebars.compile(data);
-            // call template as a function, passing in your data as the context
-            const row = template(rowData);
-            // append it to the task list table
-            const tr = document.createElement('tr');
-            tr.innerHTML = row;
-            this.taskList.appendChild(tr);
-            // re-register event listeners
-            this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
-            this.deRegisterEvents();
-            this.registerEvents();
-            // update task numbers in task list
-            this.updateTaskListNumbers();
-        });
-    }
-
-    /**
-     * Method responsible for getting a tasks table empty row.
-     */
-    private getTaskTableEmptyRow = (): HTMLTableRowElement => {
+    private getTableEmptyRow = (): HTMLTableRowElement => {
         const tr = document.createElement('tr');
         tr.classList.add('empty');
         tr.innerHTML = '<td colspan="3">There are no tasks to display.</td>';
@@ -143,7 +118,62 @@ export class ToDoListAppRenderer {
      * Event handler for the add task event.
      */
     private onTaskAdd = (e: Event, params: any): void => {
-        this.addTaskTableRow({ taskName: params });
+        // read handlebars task row template file
+        const fs = require('fs'),
+              path = require('path');
+        fs.readFile(path.join(__dirname, 'taskTableRow.hbs'), 'utf8', (err: string, data: any) => {
+            const emptyRow = this.taskList.querySelector('.empty');
+            if (emptyRow) { emptyRow.remove(); }
+            // compile the template
+            const template = handlebars.compile(data);
+            // call template as a function, passing in your data as the context
+            const row = template({ taskName: params });
+            // append it to the task list table
+            const tr = document.createElement('tr');
+            tr.innerHTML = row;
+            this.taskList.appendChild(tr);
+            // re-register event listeners
+            this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
+            this.deRegisterEvents();
+            this.registerEvents();
+            // update task numbers in task list
+            this.updateTaskListNumbers();
+        });
+    }
+
+    /**
+     * Event handler for the posts loaded event.
+     */
+    private onPostsLoaded = (e: Event, posts: any): void => {
+
+        console.log('posts loaded');
+
+        // read handlebars task row template file
+        const fs = require('fs'),
+              path = require('path');
+        fs.readFile(path.join(__dirname, 'taskTableRow.hbs'), 'utf8', (err: string, data: any) => {
+            const emptyRow = this.taskList.querySelector('.empty');
+            if (emptyRow) { emptyRow.remove(); }
+            // compile the template
+            const template = handlebars.compile(data);
+
+            posts.forEach((post: any) => {
+                // call template as a function, passing in your data as the context
+                const row = template({ taskName: post.title });
+                // append it to the task list table
+                const tr = document.createElement('tr');
+                tr.innerHTML = row;
+                this.taskList.appendChild(tr);
+            });
+
+
+            // re-register event listeners
+            this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
+            this.deRegisterEvents();
+            this.registerEvents();
+            // update task numbers in task list
+            this.updateTaskListNumbers();
+        });
     }
 
     /**
@@ -168,7 +198,7 @@ export class ToDoListAppRenderer {
         this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
         this.deRegisterEvents();
         this.taskList.innerHTML = '';
-        this.taskList.appendChild(this.getTaskTableEmptyRow());
+        this.taskList.appendChild(this.getTableEmptyRow());
         this.registerEvents();
     }
 

@@ -1,5 +1,5 @@
 import { ToDoListApp } from '../ToDoListApp';
-import { Window } from '../window';
+import { Window } from './window';
 
 export class MainMenu {
 

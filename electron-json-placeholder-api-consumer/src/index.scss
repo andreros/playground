@@ -1,0 +1,7 @@
+// global styles import
+@import "../node_modules/normalize-scss/sass/normalize/import-now";
+@import "theme";
+
+// components styles import
+@import "app/AddTaskWindow/index";
+@import "app/ToDoListApp/index";
