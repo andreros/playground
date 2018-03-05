@@ -53,7 +53,7 @@ export class Constants {
     };
 
     /**
-     * Application events.
+     * Application IPC (Inter Process Communication) events.
      */
     public static readonly EVENTS: any = {
         POSTS: {
@@ -63,8 +63,7 @@ export class Constants {
             OPEN_ADD_WINDOW: 'tasks:open:add:window',
             CLOSE_ADD_WINDOW: 'tasks:close:add:window',
             CLEAR: 'tasks:clear:tasks:list',
-            ADD: 'tasks:add:task',
-            EDIT: 'tasks:edit:task'
+            ADD: 'tasks:add:task'
         },
         ABOUT: {
             CLOSE_WINDOW: 'about:close:window'
