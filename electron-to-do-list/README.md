@@ -20,6 +20,43 @@ To Do List application built with Electron, Typescript, SASS / Materialize for C
     <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/to-do-list-about-window.png" width="600">
 </p>
 
+
+## Application Design
+
+### Modules / Architecture Diagram
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/to-do-list-application-diagram.png" width="600">
+</p>
+
+## Module Files Diagram
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/to-do-list-module-files-diagram.png" width="600">
+</p>
+
+
+## Electron Architecture
+
+### Multi-process Architecture
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/electron-multi-process-architecture.png" width="600">
+</p>
+
+## Inter-process Communication
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/electron-inter-process-communication.png" width="600">
+</p>
+
+## Inter-process Communication - Events
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/electron-inter-process-communication-events.png" width="600">
+</p>
+
+
 ## Prerequisites
 
 ### [Node.js](https://nodejs.org/en/download/)
@@ -54,7 +91,6 @@ From the command line (Windows, Mac or Linux), please execute the following comm
 ```sh
 npm install --global gulp-cli
 ```
-
 
 ## Installation
 
