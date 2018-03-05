@@ -1,5 +1,6 @@
 import { ipcRenderer } from 'electron';
 import * as handlebars from 'handlebars';
+import { LoadingMask } from '../_helpers/LoadingMask';
 import { Constants } from '../constants';
 
 /**
@@ -146,7 +147,14 @@ export class ToDoListAppRenderer {
      */
     private onPostsLoaded = (e: Event, posts: any): void => {
 
+        // testing loading mask
         console.log('posts loaded');
+        LoadingMask.mask();
+
+        // const timeout = setTimeout(() => {
+        //     LoadingMask.unmask();
+        //     clearTimeout(timeout);
+        // }, 2500);
 
         // read handlebars task row template file
         const fs = require('fs'),
