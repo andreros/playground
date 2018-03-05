@@ -1,6 +1,12 @@
 # Playground
 
-Repository for test projects, code examples and other personal experiences
+Repository for test projects, code examples and other personal experiences.
+
+## Project intentions
+
+* Electronize Miuki Miu's [Cassete Tape](https://github.com/miukimiu/cassette-tape) project.
+* Keep adding other projects, spikes and experiences to the Playground (there are some PHP API, Angular I and II 
+examples laying in my hard drive just waiting to be added).
 
 ## Projects
 
@@ -9,7 +15,7 @@ An example of CSS Triangle as explained by Chris Coyier in CSS-Tricks.com. Pleas
 "[CSS Triangle by Chris Coyier (Sept. 29, 2016)](https://css-tricks.com/snippets/css/css-triangle/)".
 
 * [electron-to-do-list](https://github.com/andreros/playground/tree/master/electron-to-do-list) - 
-(Work in Progress) To Do application build with Electron, Typescript, Handlebars and SASS.
+To Do List application build with Electron, Typescript, Handlebars and SASS.
 
 * [git-pre-commit-hooks-example](https://github.com/andreros/playground/tree/master/git-pre-commit-hooks-example) - 
 Example of how to create and include git pre-commit hooks in any project using git as its repository.
@@ -37,7 +43,7 @@ An example of a simple web application with a NodeJS and Express back-end, a Mon
 Twitter Bootstrap for front-end.
 
 * [python-web-scraper](https://github.com/andreros/playground/tree/master/python-web-scraper) - 
-(Work in Progress) Python Web Scraper is a personal project made with the purpose of learning the Python programming language 
+Python Web Scraper is a personal project made with the purpose of learning the Python programming language 
 while making something that is both educational and usable in a real life or enterprise context.
 
 
