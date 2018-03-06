@@ -56,6 +56,10 @@ export class Constants {
      * Application IPC (Inter Process Communication) events.
      */
     public static readonly EVENTS: any = {
+        LOADING_MASK: {
+            SHOW: 'loading:mask:show',
+            HIDE: 'loading:mask:hide'
+        },
         POSTS: {
             LOADED: 'posts:loaded'
         },

@@ -147,8 +147,10 @@ export class ToDoListApp {
     private onMainWindowReadyToShow = (): void => {
         this.appMainWindow.show();
         // load posts
+        this.appMainWindow.webContents.send(Constants.EVENTS.LOADING_MASK.SHOW);
         Request.executeRequest('GET', Constants.CONFIGURATIONS.POSTS, {}, (error: any, response: string) => {
             this.appMainWindow.webContents.send(Constants.EVENTS.POSTS.LOADED, response);
+            this.appMainWindow.webContents.send(Constants.EVENTS.LOADING_MASK.HIDE);
         });
     }
 

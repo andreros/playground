@@ -2,19 +2,14 @@
 
 JSONPlaceholder API consumer application built with Electron, Typescript, SASS / Materialize for CSS and Handlebars for HTML templating.
 
-## Main Window
+## To Do
 
-<p align="center">
-    <img src="https://raw.githubusercontent.com/andreros/playground/master/electron-to-do-list/src/assets/img/to-do-list-main-window.png" width="600">
-</p>
-
-
-
-
-
-
-
-
+* (DONE) Load Posts from [http://jsonplaceholder.typicode.com/posts](http://jsonplaceholder.typicode.com/posts) and list them in the main window.
+* (DONE) Create loading mask for the application.
+* Refresh posts button.
+* Show posts in Cards.
+* Allow switching between Card view and table view.
+* Refactor application and remove any "to Do List" references.
 
 
 ## Prerequisites

@@ -33,6 +33,14 @@ export class ToDoListAppRenderer {
      */
     private handlers = (): any => {
         return {
+            ipcLoadingMaskShow: {
+                event: Constants.EVENTS.LOADING_MASK.SHOW,
+                callback: this.onLoadingMaskShow
+            },
+            ipcLoadingMaskHide: {
+                event: Constants.EVENTS.LOADING_MASK.HIDE,
+                callback: this.onLoadingMaskHide
+            },
             ipcTaskAdd: {
                 event: Constants.EVENTS.TASKS.ADD,
                 callback: this.onTaskAdd
@@ -64,6 +72,8 @@ export class ToDoListAppRenderer {
      * Method responsible for registering the renderer class events.
      */
     private registerEvents = (): void => {
+        ipcRenderer.on(this.handlers().ipcLoadingMaskShow.event, this.handlers().ipcLoadingMaskShow.callback);
+        ipcRenderer.on(this.handlers().ipcLoadingMaskHide.event, this.handlers().ipcLoadingMaskHide.callback);
         ipcRenderer.on(this.handlers().ipcTaskAdd.event, this.handlers().ipcTaskAdd.callback);
         ipcRenderer.on(this.handlers().ipcPostsLoaded.event, this.handlers().ipcPostsLoaded.callback);
         ipcRenderer.on(this.handlers().ipcTasksClear.event, this.handlers().ipcTasksClear.callback);
@@ -78,6 +88,8 @@ export class ToDoListAppRenderer {
      * Method responsible for registering the renderer class events.
      */
     private deRegisterEvents = (): void => {
+        ipcRenderer.removeAllListeners(this.handlers().ipcLoadingMaskShow.event);
+        ipcRenderer.removeAllListeners(this.handlers().ipcLoadingMaskHide.event);
         ipcRenderer.removeAllListeners(this.handlers().ipcTaskAdd.event);
         ipcRenderer.removeAllListeners(this.handlers().ipcPostsLoaded.event);
         ipcRenderer.removeAllListeners(this.handlers().ipcTasksClear.event);
@@ -100,25 +112,15 @@ export class ToDoListAppRenderer {
             index++;
         });
         if (rows.length === 0) {
-            this.taskList.appendChild(this.getTableEmptyRow());
+            this.taskList.appendChild(this.getTaskTableEmptyRow());
         }
     }
 
-    private getTableEmptyRow = (): HTMLTableRowElement => {
-        const tr = document.createElement('tr');
-        tr.classList.add('empty');
-        tr.innerHTML = '<td colspan="3">There are no tasks to display.</td>';
-        return tr;
-    }
-
-    /**************************************************************************************************************************************/
-    /* Event handlers
-    /**************************************************************************************************************************************/
-
     /**
-     * Event handler for the add task event.
+     * Method responsible for adding a row to the tasks table.
+     * @param {any} rowData The row data.
      */
-    private onTaskAdd = (e: Event, params: any): void => {
+    private addTaskTableRow = (rowData: any): void => {
         // read handlebars task row template file
         const fs = require('fs'),
               path = require('path');
@@ -128,7 +130,7 @@ export class ToDoListAppRenderer {
             // compile the template
             const template = handlebars.compile(data);
             // call template as a function, passing in your data as the context
-            const row = template({ taskName: params });
+            const row = template(rowData);
             // append it to the task list table
             const tr = document.createElement('tr');
             tr.innerHTML = row;
@@ -143,44 +145,46 @@ export class ToDoListAppRenderer {
     }
 
     /**
+     * Method responsible for getting a tasks table empty row.
+     */
+    private getTaskTableEmptyRow = (): HTMLTableRowElement => {
+        const tr = document.createElement('tr');
+        tr.classList.add('empty');
+        tr.innerHTML = '<td colspan="3">There are no tasks to display.</td>';
+        return tr;
+    }
+
+    /**************************************************************************************************************************************/
+    /* Event handlers
+    /**************************************************************************************************************************************/
+
+    /**
+     * Event handler for the loading mask show event.
+     */
+    private onLoadingMaskShow = (e: Event): void => {
+        LoadingMask.mask();
+    }
+
+    /**
+     * Event handler for the loading mask hide event.
+     */
+    private onLoadingMaskHide = (e: Event): void => {
+        LoadingMask.unmask();
+    }
+
+    /**
+     * Event handler for the add task event.
+     */
+    private onTaskAdd = (e: Event, params: any): void => {
+        this.addTaskTableRow({ taskName: params });
+    }
+
+    /**
      * Event handler for the posts loaded event.
      */
     private onPostsLoaded = (e: Event, posts: any): void => {
-
-        // testing loading mask
-        console.log('posts loaded');
-        LoadingMask.mask();
-
-        // const timeout = setTimeout(() => {
-        //     LoadingMask.unmask();
-        //     clearTimeout(timeout);
-        // }, 2500);
-
-        // read handlebars task row template file
-        const fs = require('fs'),
-              path = require('path');
-        fs.readFile(path.join(__dirname, 'taskTableRow.hbs'), 'utf8', (err: string, data: any) => {
-            const emptyRow = this.taskList.querySelector('.empty');
-            if (emptyRow) { emptyRow.remove(); }
-            // compile the template
-            const template = handlebars.compile(data);
-
-            posts.forEach((post: any) => {
-                // call template as a function, passing in your data as the context
-                const row = template({ taskName: post.title });
-                // append it to the task list table
-                const tr = document.createElement('tr');
-                tr.innerHTML = row;
-                this.taskList.appendChild(tr);
-            });
-
-
-            // re-register event listeners
-            this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
-            this.deRegisterEvents();
-            this.registerEvents();
-            // update task numbers in task list
-            this.updateTaskListNumbers();
+        posts.forEach((post: any) => {
+            this.addTaskTableRow({ taskName: post.title });
         });
     }
 
@@ -206,7 +210,7 @@ export class ToDoListAppRenderer {
         this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
         this.deRegisterEvents();
         this.taskList.innerHTML = '';
-        this.taskList.appendChild(this.getTableEmptyRow());
+        this.taskList.appendChild(this.getTaskTableEmptyRow());
         this.registerEvents();
     }
 
