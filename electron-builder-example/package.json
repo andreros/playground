@@ -1,0 +1,27 @@
+{
+    "name": "electron-builder-example",
+    "version": "1.0.0",
+    "description": "Example of how to pack an Electron application for distribution with 'electron-builder'.",
+    "main": "src/js/app.js",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "devDependencies": {
+        "electron": "~1.8.3",
+        "electron-builder": "^20.3.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andreros/playground/tree/master/electron-builder-example"
+    },
+    "homepage": "https://github.com/andreros/playground/tree/master/electron-builder-example#readme",
+    "keywords": [
+        "electron",
+        "builder"
+    ],
+    "author": "André Rosa <andreros@gmail.com>",
+    "contributors": [],
+    "license": "Unlicense"
+}

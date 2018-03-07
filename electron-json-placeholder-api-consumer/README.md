@@ -69,7 +69,7 @@ While in development mode you will be able to reload the application by pressing
 ## Run Your Application
 
 To run your application, from the project directory run the command `gulp` or `gulp default`. The application
-will build and executed by Electron. If all went well, a window with your application will open.
+will build and be executed by Electron. If all went well, a window with your application will open.
 
 ## Pack Your Application for Distribution
 

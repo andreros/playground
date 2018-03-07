@@ -1,0 +1,41 @@
+{
+    "name": "electron-sqlite3",
+    "version": "1.0.0",
+    "description": "Example of an Electron application with integrated SQLite 3 database.",
+    "main": "assets/js/app.js",
+    "scripts": {
+        "postinstall": "install-app-deps",
+        "start": "electron .",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "release": "build"
+    },
+    "dependencies": {
+        "bootstrap": "^4.0.0",
+        "jquery": "^3.3.1",
+        "sqlite3": "^3.1.13"
+    },
+    "devDependencies": {
+        "electron": "^1.8.3",
+        "electron-builder": "^20.3.1"
+    },
+    "build": {
+        "appId": "com.example.electron-sqlite3",
+        "files": [
+            "assets/**/*",
+            "node_modules/**/*",
+            "package.json"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andreros/playground/tree/master/electron-sqlite3"
+    },
+    "homepage": "https://github.com/andreros/playground/tree/master/electron-sqlite3#readme",
+    "keywords": [
+        "electron",
+        "sqlite"
+    ],
+    "author": "André Rosa <andreros@gmail.com>",
+    "contributors": [],
+    "license": "Unlicense"
+}

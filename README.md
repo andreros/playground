@@ -2,7 +2,7 @@
 
 Repository for test projects, code examples and other personal experiences.
 
-## Project intentions
+## Project intentions and ideas for future implementations
 
 * Electronize Miuki Miu's [Cassete Tape](https://github.com/miukimiu/cassette-tape) project.
 * Keep adding other projects, spikes and experiences to the Playground (there are some PHP API, Angular I and II 
@@ -14,8 +14,18 @@ examples laying in my hard drive just waiting to be added).
 An example of CSS Triangle as explained by Chris Coyier in CSS-Tricks.com. Please, read the full article 
 "[CSS Triangle by Chris Coyier (Sept. 29, 2016)](https://css-tricks.com/snippets/css/css-triangle/)".
 
+* [electron-builder-example](https://github.com/andreros/playground/tree/master/electron-builder-example) - 
+Example of how to pack an Electron application for distribution with 'electron-builder'.
+
 * [electron-json-placeholder-api-consumer](https://github.com/andreros/playground/tree/master/electron-json-placeholder-api-consumer) - 
 (Work in progress) JSONPlaceholder API consumer application built with Electron, Typescript, SASS / Materialize for CSS and Handlebars for HTML templating.
+
+* [electron-simple-samples](https://github.com/andreros/playground/tree/master/electron-simple-samples) - 
+Sample Electron applications with ideas for taking them further. Featuring an activity monitor, a hash generator, a camera mirror, a price
+calculator and an URL loader, by [https://github.com/electron/simple-samples](https://github.com/electron/simple-samples).
+
+* [electron-sqlite3](https://github.com/andreros/playground/tree/master/electron-sqlite3) - 
+Example of an Electron application with integrated SQLite 3 database.
 
 * [electron-to-do-list](https://github.com/andreros/playground/tree/master/electron-to-do-list) - 
 To Do List application build with Electron, Typescript, Handlebars and SASS.
