@@ -1,5 +1,5 @@
-{{#toDoListApp}}
-<div class="toDoListApp">
+{{#jsonPlaceholderApp}}
+<div class="jsonPlaceholderApp">
     <header>
         <nav>
             <div class="nav-wrapper blue darken-1">
@@ -14,17 +14,20 @@
         <br/>
         <div class="row">
             <div class="col s12">
-                <h5>{{taskListTitle}}</h5>
+                <h5>{{postListTitle}}</h5>
             </div>
         </div>
 
         <div class="row">
             <div class="col s12">
+                <button id="reloadPostListBtn" class="btn waves-effect waves-light blue" type="button">
+                    <i class="material-icons left">refresh</i>{{reloadPostList}}
+                </button>
                 <button id="addNewTask" class="btn waves-effect waves-light blue" type="button">
-                    <i class="material-icons left">add</i>{{addNewTask}}
+                    <i class="material-icons left">add</i>{{addNewPost}}
                 </button>
                 <button id="clearTaskList" class="btn waves-effect waves-light blue" type="button">
-                    <i class="material-icons left">clear_all</i>{{clearTaskList}}
+                    <i class="material-icons left">clear_all</i>{{clearPostList}}
                 </button>
             </div>
         </div>
@@ -36,7 +39,7 @@
                         <tr>
                             <th class="actions">&nbsp;</th>
                             <th class="numbers">#</th>
-                            <th>Task Name</th>
+                            <th class="title">Title</th>
                         </tr>
                     </thead>
 
@@ -67,4 +70,4 @@
         </div>
     </footer>
 </div>
-{{/toDoListApp}}
+{{/jsonPlaceholderApp}}

@@ -1,15 +1,15 @@
-import { ToDoListApp } from '../ToDoListApp';
+import { JsonPlaceholderApp } from '../JsonPlaceholderApp';
 import { Window } from './Window';
 
 export class MainMenu {
 
-    private toDoListApp: ToDoListApp;
+    private jsonPlaceholderApp: JsonPlaceholderApp;
 
     /**
      * Class constructor.
      */
-    constructor(toDoListApp: ToDoListApp) {
-        this.toDoListApp = toDoListApp;
+    constructor(jsonPlaceholderApp: JsonPlaceholderApp) {
+        this.jsonPlaceholderApp = jsonPlaceholderApp;
     }
 
     /**
@@ -26,14 +26,14 @@ export class MainMenu {
                         label: 'About',
                         accelerator: process.platform === 'darwin' ? 'Alt+A' : 'Ctrl+A',
                         click: () => {
-                            this.toDoListApp.getAboutWindow().open();
+                            this.jsonPlaceholderApp.getAboutWindow().open();
                         }
                     },
                     {
                         label: 'Quit',
                         accelerator: process.platform === 'darwin' ? 'Alt+Q' : 'Ctrl+Q',
                         click: () => {
-                            this.toDoListApp.quit();
+                            this.jsonPlaceholderApp.quit();
                         }
                     }
                 ]
@@ -48,14 +48,14 @@ export class MainMenu {
                     label: 'Add New Task',
                     accelerator: process.platform === 'darwin' ? 'Alt+N' : 'Ctrl+N',
                     click: () => {
-                        this.toDoListApp.getAddTaskWindow().open();
+                        this.jsonPlaceholderApp.getAddTaskWindow().open();
                     }
                 },
                 {
                     label: 'Clear Task List',
                     accelerator: process.platform === 'darwin' ? 'Alt+X' : 'Ctrl+X',
                     click: () => {
-                        this.toDoListApp.clearTaskList();
+                        this.jsonPlaceholderApp.clearTaskList();
                     }
                 }
             ]

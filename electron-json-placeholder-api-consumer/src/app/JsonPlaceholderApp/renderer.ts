@@ -7,13 +7,14 @@ import { Constants } from '../constants';
  * Class tied to the To Do List App Task index.html file. This class controls all the interaction with the
  * rendered HTML inside the BrowserWindow.
  */
-export class ToDoListAppRenderer {
+export class JsonPlaceholderAppRenderer {
 
     private rootElement: HTMLElement;
     private taskList: HTMLElement;
+    private reloadPostListBtn: HTMLElement;
+    private viewPostButtons: NodeListOf<HTMLElement>;
     private addNewTask: HTMLElement;
     private clearTaskList: HTMLElement;
-    private deleteTaskButtons: NodeListOf<HTMLElement>;
 
     /**
      * Class constructor.
@@ -22,9 +23,10 @@ export class ToDoListAppRenderer {
     constructor(rootElement: HTMLElement) {
         this.rootElement = rootElement;
         this.taskList = this.rootElement.querySelector('#taskList');
+        this.reloadPostListBtn = this.rootElement.querySelector('#reloadPostListBtn');
         this.addNewTask = this.rootElement.querySelector('#addNewTask');
         this.clearTaskList = this.rootElement.querySelector('#clearTaskList');
-        this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
+        this.viewPostButtons = this.rootElement.querySelectorAll('.btn-view-post');
         this.registerEvents();
     }
 
@@ -53,13 +55,17 @@ export class ToDoListAppRenderer {
                 event: Constants.EVENTS.TASKS.CLEAR,
                 callback: this.onTasksClear
             },
+            reloadPostListBtn: {
+                event: 'click',
+                callback: this.onReloadPostList
+            },
+            viewPostBtn: {
+                event: 'click',
+                callback: this.onViewPost
+            },
             taskAddNew: {
                 event: 'click',
                 callback: this.onTaskAddNew
-            },
-            taskDelete: {
-                event: 'click',
-                callback: this.onTaskDelete
             },
             tasksClear: {
                 event: 'click',
@@ -77,11 +83,12 @@ export class ToDoListAppRenderer {
         ipcRenderer.on(this.handlers().ipcTaskAdd.event, this.handlers().ipcTaskAdd.callback);
         ipcRenderer.on(this.handlers().ipcPostsLoaded.event, this.handlers().ipcPostsLoaded.callback);
         ipcRenderer.on(this.handlers().ipcTasksClear.event, this.handlers().ipcTasksClear.callback);
+        this.reloadPostListBtn.addEventListener(this.handlers().reloadPostListBtn.event, this.handlers().reloadPostListBtn.callback);
+        this.viewPostButtons.forEach(viewPostButton => {
+            viewPostButton.addEventListener(this.handlers().viewPostBtn.event, this.handlers().viewPostBtn.callback);
+        });
         this.addNewTask.addEventListener(this.handlers().taskAddNew.event, this.handlers().taskAddNew.callback);
         this.clearTaskList.addEventListener(this.handlers().tasksClear.event, this.handlers().tasksClear.callback);
-        this.deleteTaskButtons.forEach(deleteTaskButton => {
-            deleteTaskButton.addEventListener(this.handlers().taskDelete.event, this.handlers().taskDelete.callback);
-        });
     }
 
     /**
@@ -93,38 +100,43 @@ export class ToDoListAppRenderer {
         ipcRenderer.removeAllListeners(this.handlers().ipcTaskAdd.event);
         ipcRenderer.removeAllListeners(this.handlers().ipcPostsLoaded.event);
         ipcRenderer.removeAllListeners(this.handlers().ipcTasksClear.event);
+        this.reloadPostListBtn.removeEventListener(this.handlers().reloadPostListBtn.event, this.handlers().reloadPostListBtn.callback);
+        this.viewPostButtons.forEach(viewPostButton => {
+            viewPostButton.removeEventListener(this.handlers().viewPostBtn.event, this.handlers().viewPostBtn.callback);
+        });
         this.addNewTask.removeEventListener(this.handlers().taskAddNew.event, this.handlers().taskAddNew.callback);
         this.clearTaskList.removeEventListener(this.handlers().tasksClear.event, this.handlers().tasksClear.callback);
-        this.deleteTaskButtons.forEach(deleteTaskButton => {
-            deleteTaskButton.removeEventListener(this.handlers().taskDelete.event, this.handlers().taskDelete.callback);
-        });
     }
 
     /**
-     * Method responsible for updating the task numbers in the task list.
+     * Method responsible for checking if the posts table is empty.
      */
-    private updateTaskListNumbers = (): void => {
+    private checkPostsTableEmpty = (): void => {
         const rows = this.taskList.querySelectorAll('tr');
-        let index = 1;
-        rows.forEach(row => {
-            const taskNumber = row.querySelector('.taskNumber');
-            taskNumber.innerHTML = index.toString();
-            index++;
-        });
         if (rows.length === 0) {
-            this.taskList.appendChild(this.getTaskTableEmptyRow());
+            this.taskList.appendChild(this.getTaskPostsTableEmptyRow());
         }
     }
 
     /**
-     * Method responsible for adding a row to the tasks table.
+     * Method responsible for getting a posts table empty row.
+     */
+    private getTaskPostsTableEmptyRow = (): HTMLTableRowElement => {
+        const tr = document.createElement('tr');
+        tr.classList.add('empty');
+        tr.innerHTML = '<td colspan="3">There are no posts to display.</td>';
+        return tr;
+    }
+
+    /**
+     * Method responsible for adding a row to the posts table.
      * @param {any} rowData The row data.
      */
-    private addTaskTableRow = (rowData: any): void => {
+    private addPostTableRow = (rowData: any): void => {
         // read handlebars task row template file
         const fs = require('fs'),
               path = require('path');
-        fs.readFile(path.join(__dirname, 'taskTableRow.hbs'), 'utf8', (err: string, data: any) => {
+        fs.readFile(path.join(__dirname, 'postTableRow.hbs'), 'utf8', (err: string, data: any) => {
             const emptyRow = this.taskList.querySelector('.empty');
             if (emptyRow) { emptyRow.remove(); }
             // compile the template
@@ -136,23 +148,13 @@ export class ToDoListAppRenderer {
             tr.innerHTML = row;
             this.taskList.appendChild(tr);
             // re-register event listeners
-            this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
+            this.viewPostButtons = this.rootElement.querySelectorAll('.btn-view-post');
             this.deRegisterEvents();
             this.registerEvents();
-            // update task numbers in task list
-            this.updateTaskListNumbers();
+            this.checkPostsTableEmpty();
         });
     }
 
-    /**
-     * Method responsible for getting a tasks table empty row.
-     */
-    private getTaskTableEmptyRow = (): HTMLTableRowElement => {
-        const tr = document.createElement('tr');
-        tr.classList.add('empty');
-        tr.innerHTML = '<td colspan="3">There are no tasks to display.</td>';
-        return tr;
-    }
 
     /**************************************************************************************************************************************/
     /* Event handlers
@@ -173,19 +175,38 @@ export class ToDoListAppRenderer {
     }
 
     /**
-     * Event handler for the add task event.
+     * Event handler for the reload post list button 'click' event.
      */
-    private onTaskAdd = (e: Event, params: any): void => {
-        this.addTaskTableRow({ taskName: params });
+    private onReloadPostList = (e: Event): void => {
+        ipcRenderer.send(Constants.EVENTS.POSTS.RELOAD);
     }
 
     /**
      * Event handler for the posts loaded event.
      */
     private onPostsLoaded = (e: Event, posts: any): void => {
+        this.taskList.innerHTML = '';
         posts.forEach((post: any) => {
-            this.addTaskTableRow({ taskName: post.title });
+            this.addPostTableRow({
+                postId: post.id,
+                postTitle: post.title
+            });
         });
+    }
+
+    /**
+     * Event handler for the add task event.
+     */
+    private onViewPost = (e: Event): void => {
+        const postId  = (<HTMLElement>e.currentTarget).getAttribute('data-id');
+        ipcRenderer.send(Constants.EVENTS.POSTS.VIEW_POST, Number(postId));
+    }
+
+    /**
+     * Event handler for the add task event.
+     */
+    private onTaskAdd = (e: Event, params: any): void => {
+        this.addPostTableRow({ postTitle: params });
     }
 
     /**
@@ -200,20 +221,20 @@ export class ToDoListAppRenderer {
      */
     private onTaskDelete = (e: Event): void => {
         (<HTMLElement>e.currentTarget).closest('tr').remove();
-        this.updateTaskListNumbers();
+        this.checkPostsTableEmpty();
     }
 
     /**
      * Event handler for the tasks clear event.
      */
     private onTasksClear = (e: Event): void => {
-        this.deleteTaskButtons = this.rootElement.querySelectorAll('.btn-delete-task');
+        this.viewPostButtons = this.rootElement.querySelectorAll('.btn-view-post');
         this.deRegisterEvents();
         this.taskList.innerHTML = '';
-        this.taskList.appendChild(this.getTaskTableEmptyRow());
+        this.taskList.appendChild(this.getTaskPostsTableEmptyRow());
         this.registerEvents();
     }
 
 }
 
-const toDoListAppRenderer = new ToDoListAppRenderer(document.getElementsByTagName('body')[0]);
+const jsonPlaceholderAppRenderer = new JsonPlaceholderAppRenderer(document.getElementsByTagName('body')[0]);

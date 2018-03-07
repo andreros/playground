@@ -1,0 +1,9 @@
+{
+    "jsonPlaceholderApp": {
+        "title": "JSON Placeholder API Consumer",
+        "postListTitle": "Posts",
+        "reloadPostList": "Reload Posts",
+        "addNewPost": "Add New Post",
+        "clearPostList": "Clear Post List"
+    }
+}

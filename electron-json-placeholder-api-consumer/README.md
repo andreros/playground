@@ -6,10 +6,11 @@ JSONPlaceholder API consumer application built with Electron, Typescript, SASS /
 
 * (DONE) Load Posts from [http://jsonplaceholder.typicode.com/posts](http://jsonplaceholder.typicode.com/posts) and list them in the main window.
 * (DONE) Create loading mask for the application.
-* Refresh posts button.
+* (DONE) Refresh posts button.
+* (IN PROGRESS) Refactor application and remove any "to Do List" references.
+* (IN PROGRESS) Show post details in a dedicated window.
 * Show posts in Cards.
 * Allow switching between Card view and table view.
-* Refactor application and remove any "to Do List" references.
 
 
 ## Prerequisites

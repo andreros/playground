@@ -1,18 +1,18 @@
 import { BrowserWindow, Menu, app } from 'electron';
-import { ToDoListApp } from '../ToDoListApp';
+import { JsonPlaceholderApp } from '../JsonPlaceholderApp';
 import { Window } from '../_helpers/Window';
 import { Constants } from '../constants';
 
 export class AddTaskWindow {
 
-    private toDoListApp: ToDoListApp;
+    private jsonPlaceholderApp: JsonPlaceholderApp;
     private addTaskWindow: Electron.BrowserWindow;
 
     /**
      * Class constructor.
      */
-    constructor(toDoListApp: ToDoListApp) {
-        this.toDoListApp = toDoListApp;
+    constructor(jsonPlaceholderApp: JsonPlaceholderApp) {
+        this.jsonPlaceholderApp = jsonPlaceholderApp;
     }
 
     /**
@@ -52,7 +52,7 @@ export class AddTaskWindow {
     public open = (): void => {
         if (!this.addTaskWindow) {
             this.addTaskWindow = Window.getWindow({
-                parent: this.toDoListApp.getMainWindow(),
+                parent: this.jsonPlaceholderApp.getMainWindow(),
                 backgroundColor: Constants.ADD_TASK_WINDOW.BACKGROUND_COLOR,
                 modal: Constants.ADD_TASK_WINDOW.MODAL,
                 resizable: Constants.ADD_TASK_WINDOW.RESIZABLE,

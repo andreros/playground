@@ -5,4 +5,4 @@ export { AddTaskWindow } from './AddTaskWindow';
 export { MainMenu } from './_helpers/MainMenu';
 export { Request } from './_helpers/Request';
 export { Window } from './_helpers/Window';
-export { ToDoListApp } from './ToDoListApp';
+export { JsonPlaceholderApp } from './JsonPlaceholderApp';

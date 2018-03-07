@@ -6,7 +6,7 @@ import { Request } from '../_helpers/Request';
 import { Window } from '../_helpers/Window';
 import { Constants } from '../constants';
 
-export class ToDoListApp {
+export class JsonPlaceholderApp {
 
     private app: Electron.App;
     private appMainMenu: Electron.Menu;
@@ -49,6 +49,14 @@ export class ToDoListApp {
                 event: 'window-all-closed',
                 callback: this.onWindowAllClosed
             },
+            postsReload: {
+                event: Constants.EVENTS.POSTS.RELOAD,
+                callback: this.onPostsReload
+            },
+            viewPost: {
+                event: Constants.EVENTS.POSTS.VIEW_POST,
+                callback: this.onViewPost
+            },
             taskAdd: {
                 event: Constants.EVENTS.TASKS.ADD,
                 callback: this.onTaskAdd
@@ -74,11 +82,17 @@ export class ToDoListApp {
     private registerEvents = (): void => {
         this.app.on(this.handlers().appReady.event, this.handlers().appReady.callback);
         this.app.on(this.handlers().windowAllClosed.event, this.handlers().windowAllClosed.callback);
+        this.ipcMain.on(this.handlers().postsReload.event, this.handlers().postsReload.callback);
+        this.ipcMain.on(this.handlers().viewPost.event, this.handlers().viewPost.callback);
         this.ipcMain.on(this.handlers().taskAdd.event, this.handlers().taskAdd.callback);
         this.ipcMain.on(this.handlers().taskAddWindowOpen.event, this.handlers().taskAddWindowOpen.callback);
         this.ipcMain.on(this.handlers().taskAddWindowClose.event, this.handlers().taskAddWindowClose.callback);
         this.ipcMain.on(this.handlers().aboutWindowClose.event, this.handlers().aboutWindowClose.callback);
     }
+
+    /**************************************************************************************************************************************/
+    /* Public methods
+    /**************************************************************************************************************************************/
 
     /**
      * To Do List Main window getter.
@@ -116,6 +130,36 @@ export class ToDoListApp {
     }
 
     /**************************************************************************************************************************************/
+    /* Private methods
+    /**************************************************************************************************************************************/
+
+    /**
+     * Method responsible for loading the posts from the API.
+     */
+    private loadPosts = (): void => {
+        this.appMainWindow.webContents.send(Constants.EVENTS.LOADING_MASK.SHOW);
+        Request.executeRequest('GET', Constants.CONFIGURATIONS.POSTS, {}, (error: any, response: string) => {
+            this.appMainWindow.webContents.send(Constants.EVENTS.POSTS.LOADED, response);
+            this.appMainWindow.webContents.send(Constants.EVENTS.LOADING_MASK.HIDE);
+        });
+    }
+
+    /**
+     * Method responsible for loading one post from the API.
+     * @param {number} postId The post id.
+     */
+    private loadPost = (postId: number): void => {
+        this.appMainWindow.webContents.send(Constants.EVENTS.LOADING_MASK.SHOW);
+        Request.executeRequest('GET', Constants.CONFIGURATIONS.POSTS + '/' + postId, {}, (error: any, response: string) => {
+            this.appMainWindow.webContents.send(Constants.EVENTS.POSTS.GET_POST, response);
+
+            console.log('post: ', response);
+
+            this.appMainWindow.webContents.send(Constants.EVENTS.LOADING_MASK.HIDE);
+        });
+    }
+
+    /**************************************************************************************************************************************/
     /* Event handlers
     /**************************************************************************************************************************************/
 
@@ -146,12 +190,7 @@ export class ToDoListApp {
      */
     private onMainWindowReadyToShow = (): void => {
         this.appMainWindow.show();
-        // load posts
-        this.appMainWindow.webContents.send(Constants.EVENTS.LOADING_MASK.SHOW);
-        Request.executeRequest('GET', Constants.CONFIGURATIONS.POSTS, {}, (error: any, response: string) => {
-            this.appMainWindow.webContents.send(Constants.EVENTS.POSTS.LOADED, response);
-            this.appMainWindow.webContents.send(Constants.EVENTS.LOADING_MASK.HIDE);
-        });
+        this.loadPosts();
     }
 
     /**
@@ -166,6 +205,20 @@ export class ToDoListApp {
      */
     private onWindowAllClosed = (): void => {
         this.quit();
+    }
+
+    /**
+     * Event handler for the posts reload event.
+     */
+    private onPostsReload = (e: Event): void => {
+        this.loadPosts();
+    }
+
+    /**
+     * Event handler for the view post event.
+     */
+    private onViewPost = (e: Event, postId: number): void => {
+        this.loadPost(postId);
     }
 
     /**

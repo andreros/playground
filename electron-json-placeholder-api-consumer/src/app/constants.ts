@@ -16,7 +16,7 @@ export class Constants {
      * Main window (To Do List) configurations.
      */
     public static readonly MAIN_WINDOW: any = {
-        TARGET: 'app/ToDoListApp/index.html',
+        TARGET: 'app/JsonPlaceholderApp/index.html',
         TITLEBAR_STYLE: 'hidden',
         BACKGROUND_COLOR: '#FFF',
         SHOW: false,
@@ -61,7 +61,10 @@ export class Constants {
             HIDE: 'loading:mask:hide'
         },
         POSTS: {
-            LOADED: 'posts:loaded'
+            LOADED: 'posts:loaded',
+            RELOAD: 'posts:reload',
+            VIEW_POST: 'posts:view:post',
+            GET_POST: 'posts:get:post'
         },
         TASKS: {
             OPEN_ADD_WINDOW: 'tasks:open:add:window',
