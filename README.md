@@ -17,6 +17,10 @@ An example of CSS Triangle as explained by Chris Coyier in CSS-Tricks.com. Pleas
 * [electron-builder-example](https://github.com/andreros/playground/tree/master/electron-builder-example) - 
 Example of how to pack an Electron application for distribution with 'electron-builder'.
 
+* [electron-gunsmoke-shooter-game](https://github.com/andreros/playground/tree/master/electron-gamesmoke-shooter-game) - 
+Gunsmoke is an electron application for a shooter game implemented in pure javascript, written by 
+[Raj Kumar](https://www.facebook.com/hackmanraj).
+
 * [electron-json-placeholder-api-consumer](https://github.com/andreros/playground/tree/master/electron-json-placeholder-api-consumer) - 
 (Work in progress) JSONPlaceholder API consumer application built with Electron, Typescript, SASS / Materialize for CSS and Handlebars for HTML templating.
 
