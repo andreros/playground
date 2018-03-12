@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # title           :test.py
 # description     :Script file for testing the scrapers.
-# author          :André Rosa
+# author          :Andre Rosa
 # date            :2016/07/12
 # version         :0.1dev
 # usage           :python test.py [-d] Firefox|Chrome [-t] All|Google|Olx
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     if args.test == 'All':
         gScraper = GoogleScraper(driver)
         print(gScraper)
-        olxScraper = OlxScraper(driver)
+        olxScraper = src.scraper.olxscraper.OlxScraper(driver)
         print(olxScraper)
         gScraper.lookup("Selenium")
         time.sleep(5)
@@ -50,7 +50,7 @@ if __name__ == "__main__":
         time.sleep(5)
         gScraper.quit()
     elif args.test == 'Olx':
-        olxScraper = OlxScraper(driver)
+        olxScraper = src.scraper.olxscraper.OlxScraper(driver)
         print(olxScraper)
         time.sleep(5)
         olxScraper.quit()
