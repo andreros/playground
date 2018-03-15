@@ -4,14 +4,17 @@ An awesome & curated list of development resources with special focus on front-e
 
 
 
-## JavaScript
+<p>
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/javascript.png" width="96">
+    <h2>JavaScript</h2>
+</p>
 
 ### Books
 
 - [Eloquent Javascript, 3rd Edition](http://eloquentjavascript.net/) (Free) - a book about JavaScript, programming, and the wonders 
 of the digital, by Marijn Haverbeke.
 - [You don't know JS](https://github.com/getify/You-Dont-Know-JS) (Free) - A book series on JavaScript, by Kyle Simpson.
-- [Professor FrisbY's Mostly Adequate Guide To Functional Programming](https://drboolean.gitbooks.io/mostly-adequate-guide-old/)
+- [Professor Frisby's Mostly Adequate Guide To Functional Programming](https://drboolean.gitbooks.io/mostly-adequate-guide-old/)
  (Free) - A book on the functional paradigm in general, by Franklin Risby.
 
 ### Guides
