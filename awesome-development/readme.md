@@ -41,10 +41,18 @@ and large, by Jonathan Snook.
 - [BEM — Block Element Modifier](http://getbem.com/) - BEM — Block Element Modifier is a methodology that helps you to create reusable
 components and code sharing in front-end development, by Vsevolod Strukchinsky and Vladimir Starkov.
 
+### Guides
+
+- [CSS Flexbox Reference](https://tympanus.net/codrops/css_reference/flexbox/) - Flexbox, or the Flexible Box Layout, is a new layout 
+mode in CSS3 designed for laying out complex applications and web pages, by Sara Soueidan.
+- [Flexbox Froggy](http://flexboxfroggy.com/) - A game for learning flexbox CSS, by [codepip](https://codepip.com/).
+- [CSS Grid Reference](https://css-tricks.com/snippets/css/complete-guide-grid/) - CSS Grid Layout (aka "Grid"), a two-dimensional 
+grid-based layout system that aims to change the way we design grid-based user interfaces, by Chris House.
+- [Grid Garden](http://cssgridgarden.com/) - A game for learning CSS grid, by [codepip](https://codepip.com/).
+
+
 ### Articles
 
-- [CSS Reference Flexbox](https://tympanus.net/codrops/css_reference/flexbox/) - Flexbox, or the Flexible Box Layout, is a new layout 
-mode in CSS3 designed for laying out complex applications and web pages, by Sara Soueidan.
 - [ITCSS: Scalable and Maintainable CSS Architecture](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) - 
 Inverted Triangle CSS, an architecture for segmenting and organizing CSS in large projects, by Lubos Kmetko.
 - [CSS Triangle](https://css-tricks.com/snippets/css/css-triangle/) - An example of CSS Triangle, by Chris Coyier.
@@ -77,7 +85,7 @@ Frontend or Backend Developer with links to courses, by Brandon Morelli.
 
 ### Guides
 
-- [git Tutorials and Training](https://www.atlassian.com/git/tutorials) (Free) - Become a git guru, by Atlassian.
+- [Git Tutorials and Training](https://www.atlassian.com/git/tutorials) (Free) - Become a git guru, by Atlassian.
 
 
 
