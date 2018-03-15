@@ -88,7 +88,7 @@ Frontend or Backend Developer with links to courses, by Brandon Morelli.
 - [Git Tutorials and Training](https://www.atlassian.com/git/tutorials) (Free) - Become a git guru, by Atlassian.
 
 
-
+<br>
 ## Author
 
 **André Rosa**
