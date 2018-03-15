@@ -4,10 +4,7 @@ An awesome & curated list of development resources with special focus on front-e
 
 
 
-<div>
-    <img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/javascript.png" width="50" align="absmiddle">
-    <h2>JavaScript</h2>
-</div>
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/javascript.png" width="50" align="middle">JavaScript</h2>
 
 ### Books
 
