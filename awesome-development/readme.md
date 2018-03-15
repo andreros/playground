@@ -3,7 +3,7 @@
 An awesome & curated list of development resources with special focus on front-end technologies.
 
 
-<br><br>
+<br>
 <h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/javascript.png" width="50" align="absmiddle">JavaScript</h2>
 
 ### Books
@@ -31,7 +31,7 @@ Debounce and throttle: two similar (but different!) techniques to control how ma
 time explained, by David Corbacho.
 
 
-
+<br>
 <h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/css3.png" width="50" align="absmiddle">CSS</h2>
 
 ### Books
@@ -58,7 +58,7 @@ Inverted Triangle CSS, an architecture for segmenting and organizing CSS in larg
 - [CSS Triangle](https://css-tricks.com/snippets/css/css-triangle/) - An example of CSS Triangle, by Chris Coyier.
 
 
-
+<br>
 <h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/html5.png" width="50" align="absmiddle">Web Development</h2>
 
 ### Books
@@ -80,7 +80,7 @@ accessible, by AT&T and Google.
 Frontend or Backend Developer with links to courses, by Brandon Morelli.
 
 
-
+<br>
 <h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/git.png" width="50" align="absmiddle">Version Control Systems</h2>
 
 ### Guides
