@@ -89,6 +89,7 @@ Frontend or Backend Developer with links to courses, by Brandon Morelli.
 
 
 <br>
+
 ## Author
 
 **André Rosa**
