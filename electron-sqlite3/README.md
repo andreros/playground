@@ -1,5 +1,8 @@
 # Electron SQLite3
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 Example of an Electron application with integrated SQLite 3 database.
 
 
@@ -46,7 +49,7 @@ will build and be executed by Electron. If all went well, a window with your app
 ## Built With
 
 *  Electron cross platform desktop apps with JavaScript, HTML, and CSS: [https://electronjs.org/](https://electronjs.org/)
-*  Electron SQLite 3: [https://github.com/bytheway/electron-sqlite3/](https://github.com/bytheway/electron-sqlite3/) 
+*  Electron SQLite 3: [https://github.com/bytheway/electron-sqlite3/](https://github.com/bytheway/electron-sqlite3/)
 
 
 ## Author

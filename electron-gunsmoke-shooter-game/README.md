@@ -1,5 +1,8 @@
 # Electron Gunsmoke Shooter Game
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 Gunsmoke is an electron application for a shooter game implemented in pure javascript.
 
 
@@ -43,7 +46,7 @@ will match the operating system you are on:
 *  `npm run package-linux`: Build a distribution version for Linux systems.
 
 
-For a comprehensive list of all the Electron Builder packager options, please read the project documentation: 
+For a comprehensive list of all the Electron Builder packager options, please read the project documentation:
 [https://github.com/electron-userland/electron-builder#readme](https://github.com/electron-userland/electron-builder#readme)
 
 

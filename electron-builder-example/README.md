@@ -1,5 +1,8 @@
 # Electron Builder Example
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 Example of how to pack an Electron application for distribution with 'electron-builder'.
 
 
@@ -40,7 +43,7 @@ will match the operating system you are on:
 *  `npm run pack`: Build a distribution version of your application.
 *  `npm run dist`: Build a distribution version of your application with an installer.
 
-For a comprehensive list of all the Electron Builder packager options, please read the project documentation: 
+For a comprehensive list of all the Electron Builder packager options, please read the project documentation:
 [https://github.com/electron-userland/electron-builder#readme](https://github.com/electron-userland/electron-builder#readme)
 
 

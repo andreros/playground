@@ -1,5 +1,8 @@
 ## Python Web Scraper
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 Python Web Scraper is a personal project made with the purpose of learning the Python programming language while making something
 that is both educational and usable in a real life or enterprise context. This project covers several aspects:
 

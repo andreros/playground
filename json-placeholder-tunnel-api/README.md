@@ -1,5 +1,8 @@
 # JSONPlaceholder Tunnel API - Node API Example
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 An example of a RESTful API implemented with Node.js, Express and Request. This example implements an API that performs
 calls to another API, acting like a tunnel. The target API is [http://jsonplaceholder.typicode.com/](http://jsonplaceholder.typicode.com/).
 

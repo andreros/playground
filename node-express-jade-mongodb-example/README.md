@@ -1,5 +1,8 @@
 # Node JS / Express / Jade / MongoDB Example Website
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 An example of a simple web application with a NodeJS and Express back-end, a MongoDB database and Jade template engine using Twitter Bootstrap for front-end.
 
 

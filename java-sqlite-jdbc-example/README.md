@@ -1,14 +1,17 @@
 # Java SQLite JDBC Example
 
-Example project showing how to use a SQLite database in a Java application. This project implements the tutorial from 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
+Example project showing how to use a SQLite database in a Java application. This project implements the tutorial from
 [Tutorials Point](http://www.tutorialspoint.com/sqlite/sqlite_java.htm) included in the ```doc``` folder.
 
 ### Set up and Run this project ###
 
 ##### Dependencies #####
 
-This project is a [maven project](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html). 
-Any IDE supporting maven projects should automatically recognise and download the dependencies needed to run the 
+This project is a [maven project](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
+Any IDE supporting maven projects should automatically recognise and download the dependencies needed to run the
 application.
 
 

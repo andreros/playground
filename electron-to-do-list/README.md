@@ -1,5 +1,8 @@
 # Electron To Do List
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 To Do List application built with Electron, Typescript, SASS / Materialize for CSS and Handlebars for HTML templating.
 
 ## Main Window
@@ -99,7 +102,7 @@ Clone or download this project. From the project directory run the command `npm 
 
 ## Local Development
 
-To test the project in development mode, set the variable `process.env.NODE_ENV = 'development'`. This will put 
+To test the project in development mode, set the variable `process.env.NODE_ENV = 'development'`. This will put
 Electron in development mode. From the project directory run the command `gulp` to launch your application.
 
 ```javascript

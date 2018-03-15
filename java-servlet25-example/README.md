@@ -1,5 +1,8 @@
 # Java Servlet using v2.5 Servlet API Example
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 Guidelines on how to create a Java Servlet using the 2.5 Servlet API with Maven and IntelliJ.
 
 ## Creating a Java Servlet using the 2.5 Servlet API with Maven and IntelliJ
