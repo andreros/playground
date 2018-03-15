@@ -10,6 +10,9 @@ examples laying in my hard drive just waiting to be added).
 
 ## Projects
 
+* [awesome-development](https://github.com/andreros/playground/tree/master/awesome-development) - 
+An awesome & curated list of development resources with special focus on front-end technologies.
+
 * [css-triangle-example](https://github.com/andreros/playground/tree/master/css-triangle-example) - 
 An example of CSS Triangle as explained by Chris Coyier in CSS-Tricks.com. Please, read the full article 
 "[CSS Triangle by Chris Coyier (Sept. 29, 2016)](https://css-tricks.com/snippets/css/css-triangle/)".
@@ -51,7 +54,7 @@ Simple application to test JSONPlaceholder, a fake online REST API for Testing a
 An example of a RESTful API implemented with Node.js, Express and Request. This example implements an API that performs
 calls to another API, acting like a tunnel. The target API is [http://jsonplaceholder.typicode.com/](http://jsonplaceholder.typicode.com/).
 
-* [maven-application-example](https://github.com/andreros/playground/tree/master/maven-app-example) - 
+* [maven-app-example](https://github.com/andreros/playground/tree/master/maven-app-example) - 
 Maven example project resulting from the resolution of the official Apache Maven project's 
 "[Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/index.html)".
 

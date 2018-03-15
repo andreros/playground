@@ -9,6 +9,7 @@ function executeRequest(method, url) {
         // tunneled call to the JSONPlaceholder through 'json-placeholder-tunnel-api'
         // to make calls to the local (tunnel) API, please run the 'json-placeholder-tunnel-api' project
         // root = 'http://localhost:8080/api/v1';
+        root = 'http://andreros.ddns.net:5000/api/v1';
 
     $.ajax({
         url: root + url,
