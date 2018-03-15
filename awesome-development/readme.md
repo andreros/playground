@@ -4,7 +4,7 @@ An awesome & curated list of development resources with special focus on front-e
 
 
 
-<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/javascript.png" width="50" align="middle">JavaScript</h2>
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/javascript.png" width="50" align="absmiddle">JavaScript</h2>
 
 ### Books
 
@@ -32,7 +32,7 @@ time explained, by David Corbacho.
 
 
 
-## CSS
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/css3.png" width="50" align="absmiddle">CSS</h2>
 
 ### Books
 
@@ -59,7 +59,7 @@ Inverted Triangle CSS, an architecture for segmenting and organizing CSS in larg
 
 
 
-## Web Development
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/html5.png" width="50" align="absmiddle">Web Development</h2>
 
 ### Books
 
@@ -81,7 +81,7 @@ Frontend or Backend Developer with links to courses, by Brandon Morelli.
 
 
 
-## Version Control Systems
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/git.png" width="50" align="absmiddle">Version Control Systems</h2>
 
 ### Guides
 
