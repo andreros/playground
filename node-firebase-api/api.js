@@ -110,7 +110,7 @@ router.route('/tasks/:taskId').delete(function (req, res) {
 });
 
 // test route to make sure everything is working (accessed at GET http://localhost:5000/api/v1)
-router.route('/tasks/:taskId').get(function (req, res) {
+router.route('/').get(function (req, res) {
     res.json({
         message: 'API v1 up and running!'
     });

@@ -26,6 +26,27 @@ To run your application, from the project directory run the command `npm start`.
 be started and accessible in the `http://localhost:5000/api/v1/` endpoint.
 
 
+## Database Structure
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/andreros/playground/master/node-firebase-api/img/database-structure.png" width="600">
+</p>
+
+
+## API Methods
+
+Note: Bear in mind the following methods are implemented for demonstration purposes. Please, refer to the code for the implementation
+details.
+
+| Verb | Endpoint | Description |
+| --- | --- | --- |
+| `GET` | `/tasks` | Retrieve all tasks. | 
+| `GET` | `/tasks/:taskId` | Retrieve one task details, give its ID. | 
+| `POST` | `/tasks` | Create a new task. | 
+| `PUT` | `/tasks/:taskId` | Update one task, give its ID. | 
+| `DELETE` | `/tasks/:taskId` | Delete one task, given its ID. | 
+
+
 ## Built With
 
 *  Node.js: [https://nodejs.org/](https://nodejs.org/)
