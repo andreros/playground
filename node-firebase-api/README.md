@@ -35,15 +35,16 @@ be started and accessible in the `http://localhost:5000/api/v1/` endpoint.
 
 ## API Methods
 
-Note: Bear in mind the following methods are implemented for demonstration purposes. Please, refer to the code for the implementation
+Note: Bear in mind the following methods are implemented for demonstration purposes. The `POST` method for creating a new task or the `PUT`
+for updating a task accept no parameters (which in a real world situation they would). Please, refer to the code for the implementation
 details.
 
 | Verb | Endpoint | Description |
 | --- | --- | --- |
 | `GET` | `/tasks` | Retrieve all tasks. | 
-| `GET` | `/tasks/:taskId` | Retrieve one task details, give its ID. | 
+| `GET` | `/tasks/:taskId` | Retrieve one task details, given its ID. | 
 | `POST` | `/tasks` | Create a new task. | 
-| `PUT` | `/tasks/:taskId` | Update one task, give its ID. | 
+| `PUT` | `/tasks/:taskId` | Update one task, given its ID. | 
 | `DELETE` | `/tasks/:taskId` | Delete one task, given its ID. | 
 
 
