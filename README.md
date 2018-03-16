@@ -52,10 +52,6 @@ Example project showing how to use a SQLite database in a Java application. This
 * [json-placeholder-api-tester](https://github.com/andreros/playground/tree/master/json-placeholder-api-tester) - 
 Simple application to test JSONPlaceholder, a fake online REST API for Testing and Prototyping.
 
-* [json-placeholder-tunnel-api](https://github.com/andreros/playground/tree/master/json-placeholder-tunnel-api) - 
-An example of a RESTful API implemented with Node.js, Express and Request. This example implements an API that performs
-calls to another API, acting like a tunnel. The target API is [http://jsonplaceholder.typicode.com/](http://jsonplaceholder.typicode.com/).
-
 * [maven-app-example](https://github.com/andreros/playground/tree/master/maven-app-example) - 
 Maven example project resulting from the resolution of the official Apache Maven project's 
 "[Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/index.html)".
@@ -63,6 +59,13 @@ Maven example project resulting from the resolution of the official Apache Maven
 * [node-express-jade-mongodb-example](https://github.com/andreros/playground/tree/master/node-express-jade-mongodb-example) - 
 An example of a simple web application with a NodeJS and Express back-end, a MongoDB database and Jade template engine using 
 Twitter Bootstrap for front-end.
+
+* [node-firebase-api](https://github.com/andreros/playground/tree/master/node-firebase-api) - 
+An example of a RESTful API implemented in Node.js with Firebase database interaction.
+
+* [node-json-placeholder-tunnel-api](https://github.com/andreros/playground/tree/master/node-json-placeholder-tunnel-api) - 
+An example of a RESTful API implemented with Node.js, Express and Request. This example implements an API that performs
+calls to another API, acting like a tunnel. The target API is [http://jsonplaceholder.typicode.com/](http://jsonplaceholder.typicode.com/).
 
 * [python-web-scraper](https://github.com/andreros/playground/tree/master/python-web-scraper) - 
 Python Web Scraper is a personal project made with the purpose of learning the Python programming language 

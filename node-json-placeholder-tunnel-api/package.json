@@ -1,5 +1,5 @@
 {
-    "name": "json-placeholder-tunnel-api",
+    "name": "node-json-placeholder-tunnel-api",
     "version": "1.0.0",
     "description": "An example of a RESTful API implemented with Node.js, Express and Request. This example implements an API that performs calls to another API, acting like a tunnel.",
     "main": "api.js",
@@ -14,9 +14,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/andreros/playground/tree/master/json-placeholder-tunnel-api"
+        "url": "https://github.com/andreros/playground/tree/master/node-json-placeholder-tunnel-api"
     },
-    "homepage": "https://github.com/andreros/playground/tree/master/json-placeholder-tunnel-api#readme",
+    "homepage": "https://github.com/andreros/playground/tree/master/node-json-placeholder-tunnel-api#readme",
     "keywords": [
         "node",
         "nodejs",
