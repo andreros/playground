@@ -43,14 +43,16 @@ In order to confirm the successful MongoDB installation on your system, please r
 
 You should see the following output (example below).
 
-`db version v3.6.3
+```bash
+db version v3.6.3
 git version: 9586e557d54ef70f9ca4b43c26892cd55257e1a5
 OpenSSL version: OpenSSL 1.0.2n  7 Dec 2017
 allocator: system
 modules: none
 build environment:
     distarch: x86_64
-    target_arch: x86_64`
+    target_arch: x86_64
+```
 
 For further details on how to install MongoDB on other systems, please read the
 [MongoDB official instalation guide](https://docs.mongodb.com/manual/administration/install-community/)
@@ -71,7 +73,7 @@ For further details on how to install MongoDB on other systems, please read the
 
 #### Optional MongoDB tools
 
-Although not being completely necessary, it is highly recommended you install a GUI (Graphical User Interface) for
+Although not completely necessary, it is highly recommended you install a GUI (Graphical User Interface) for
 your MongoDB database instance. The official MongoDB GUI is [Compass](https://www.mongodb.com/download-center?#compass).
 For learning purposes we recommend you install the Community Edition. For further details on how to install the application,
 please read the [Compass official installation guide](https://docs.mongodb.com/compass/current/install/).
