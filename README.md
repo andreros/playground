@@ -67,6 +67,9 @@ An example of a RESTful API implemented in Node.js with Firebase database intera
 An example of a RESTful API implemented with Node.js, Express and Request. This example implements an API that performs
 calls to another API, acting like a tunnel. The target API is [http://jsonplaceholder.typicode.com/](http://jsonplaceholder.typicode.com/).
 
+* [node-mongodb-api](https://github.com/andreros/playground/tree/master/node-mongodb-api) - 
+Example of a RESTful API implemented in Node.js with MongoDB database interaction.
+
 * [python-web-scraper](https://github.com/andreros/playground/tree/master/python-web-scraper) - 
 Python Web Scraper is a personal project made with the purpose of learning the Python programming language 
 while making something that is both educational and usable in a real life or enterprise context.
