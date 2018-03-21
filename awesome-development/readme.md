@@ -59,6 +59,8 @@ grid-based layout system that aims to change the way we design grid-based user i
 - [ITCSS: Scalable and Maintainable CSS Architecture](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) - 
 Inverted Triangle CSS, an architecture for segmenting and organizing CSS in large projects, by Lubos Kmetko.
 - [CSS Triangle](https://css-tricks.com/snippets/css/css-triangle/) - An example of CSS Triangle, by Chris Coyier.
+- [CSS Glitch Effect](https://tympanus.net/codrops/2017/12/21/css-glitch-effect/) - An experimental glitch effect powered by CSS animations and the 
+clip-path property. Inspired by the technique seen on the speakers page of the 404 conference, by Mary Lou.
 
 
 <br>
