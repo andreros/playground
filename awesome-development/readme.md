@@ -24,6 +24,11 @@ such as the language reference, tutorials or documentation, by Mozilla.
 - [Mozilla MDN Web Docs - JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) (Free) - A guide that shows you how to use 
 JavaScript and gives an overview of the language, by Mozilla.
 
+### Workshops
+
+- [NodeSchool](https://nodeschool.io/) (Free) - Open source workshops that teach web software skills. Do them on your own or at a workshop nearby. 
+NodeSchool is an open source project run by volunteers with two goals: to create high quality programming curriculum and to host community learning events.
+
 ### Video Tutorials
 
 - [#JavaScript30](https://javascript30.com/) (Free) - 30 Day Vanilla JS Coding Challenge. Build 30 things in 30 days with 30 
