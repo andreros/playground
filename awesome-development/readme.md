@@ -11,27 +11,27 @@ An awesome & curated list of development resources with special focus on front-e
 
 ### Books
 
-- [Eloquent Javascript, 3rd Edition](http://eloquentjavascript.net/) (Free) - a book about JavaScript, programming, and the wonders 
+- [Eloquent Javascript, 3rd Edition](http://eloquentjavascript.net/) - (Free) A book about JavaScript, programming, and the wonders 
 of the digital, by Marijn Haverbeke.
-- [You don't know JS](https://github.com/getify/You-Dont-Know-JS) (Free) - A book series on JavaScript, by Kyle Simpson.
-- [Professor Frisby's Mostly Adequate Guide To Functional Programming](https://drboolean.gitbooks.io/mostly-adequate-guide-old/)
- (Free) - A book on the functional paradigm in general, by Franklin Risby.
+- [You don't know JS](https://github.com/getify/You-Dont-Know-JS) - (Free) A book series on JavaScript, by Kyle Simpson.
+- [Professor Frisby's Mostly Adequate Guide To Functional Programming](https://drboolean.gitbooks.io/mostly-adequate-guide-old/) -
+(Free) A book on the functional paradigm in general, by Franklin Risby.
 
 ### Guides
 
-- [Mozilla MDN Web Docs - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (Free) - A collection of JavaScript related resources
+- [Mozilla MDN Web Docs - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - (Free) A collection of JavaScript related resources
 such as the language reference, tutorials or documentation, by Mozilla.
-- [Mozilla MDN Web Docs - JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) (Free) - A guide that shows you how to use 
+- [Mozilla MDN Web Docs - JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) - (Free) A guide that shows you how to use 
 JavaScript and gives an overview of the language, by Mozilla.
 
 ### Workshops
 
-- [NodeSchool](https://nodeschool.io/) (Free) - Open source workshops that teach web software skills. Do them on your own or at a workshop nearby. 
+- [NodeSchool](https://nodeschool.io/) - (Free) Open source workshops that teach web software skills. Do them on your own or at a workshop nearby. 
 NodeSchool is an open source project run by volunteers with two goals: to create high quality programming curriculum and to host community learning events.
 
 ### Video Tutorials
 
-- [#JavaScript30](https://javascript30.com/) (Free) - 30 Day Vanilla JS Coding Challenge. Build 30 things in 30 days with 30 
+- [#JavaScript30](https://javascript30.com/) - (Free) 30 Day Vanilla JS Coding Challenge. Build 30 things in 30 days with 30 
 tutorials, by Wes Bos.
 
 ### Articles
@@ -46,7 +46,7 @@ time explained, by David Corbacho.
 
 ### Books
 
-- [SMACSS, Scalable and Modular Architecture for CSS](https://smacss.com/book/) (Free) - A flexible guide to developing sites small 
+- [SMACSS, Scalable and Modular Architecture for CSS](https://smacss.com/book/) - (Free) A flexible guide to developing sites small 
 and large, by Jonathan Snook.
 - [BEM — Block Element Modifier](http://getbem.com/) - BEM — Block Element Modifier is a methodology that helps you to create reusable
 components and code sharing in front-end development, by Vsevolod Strukchinsky and Vladimir Starkov.
@@ -60,6 +60,10 @@ mode in CSS3 designed for laying out complex applications and web pages, by Sara
 grid-based layout system that aims to change the way we design grid-based user interfaces, by Chris House.
 - [Grid Garden](http://cssgridgarden.com/) - A game for learning CSS grid, by [codepip](https://codepip.com/).
 
+### Video Tutorials
+
+- [What the Flexbox?!](https://flexbox.io/) - (Free) A simple, free 20 video course that will help you master CSS Flexbox, by Wes Bos.
+- [CSS Grid](https://cssgrid.io/) - (Free) Learn CSS Grid with Wes Bos in 25 pretty good videos, by Wes Bos.
 
 ### Articles
 
@@ -83,7 +87,7 @@ tips for rocking your coding interview, by Yangshun Tay.
 
 ### Courses
 
-- [Web Accessibility](https://eu.udacity.com/course/web-accessibility--ud891) (Free) - Hands-on experience making web applications
+- [Web Accessibility](https://eu.udacity.com/course/web-accessibility--ud891) - (Free) Hands-on experience making web applications
 accessible, by AT&T and Google.
 
 ### Articles
@@ -97,7 +101,7 @@ Frontend or Backend Developer with links to courses, by Brandon Morelli.
 
 ### Courses
 
-- [MongoDB University - Online Course Catalog](https://university.mongodb.com/courses/catalog) (Free) - Learn MongoDB from MongoDB with a collection of
+- [MongoDB University - Online Course Catalog](https://university.mongodb.com/courses/catalog) - (Free) Learn MongoDB from MongoDB with a collection of
 free courses, by MongoDB.
 
 
@@ -106,7 +110,7 @@ free courses, by MongoDB.
 
 ### Guides
 
-- [Git Tutorials and Training](https://www.atlassian.com/git/tutorials) (Free) - Become a git guru, by Atlassian.
+- [Git Tutorials and Training](https://www.atlassian.com/git/tutorials) - (Free) Become a git guru, by Atlassian.
 
 
 <br>
