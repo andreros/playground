@@ -6,7 +6,6 @@
 An awesome & curated list of development resources with special focus on front-end technologies.
 
 
-<br>
 <h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/javascript.png" width="50" align="absmiddle">JavaScript</h2>
 
 ### Books
