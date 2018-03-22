@@ -19,7 +19,9 @@ of the digital, by Marijn Haverbeke.
 
 ### Guides
 
-- [JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) (Free) - A guide that shows you how to use 
+- [Mozilla MDN Web Docs - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (Free) - A collection of JavaScript related resources
+such as the language reference, tutorials or documentation, by Mozilla.
+- [Mozilla MDN Web Docs - JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) (Free) - A guide that shows you how to use 
 JavaScript and gives an overview of the language, by Mozilla.
 
 ### Video Tutorials
