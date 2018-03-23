@@ -23,9 +23,8 @@ such as the language reference, tutorials or documentation, by Mozilla.
 - [Mozilla MDN Web Docs - JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) - (Free) A guide that shows you how to use 
 JavaScript and gives an overview of the language, by Mozilla.
 - [You might not need jQuery](http://youmightnotneedjquery.com/) - (Free) jQuery and its cousins are great, and by all means use them if it makes it 
-easier to develop your application, by Zack Bloom and Adam Schwartz.
-
-If you're developing a library on the other hand, please take a moment to consider if you actually need jQuery as a dependency.
+easier to develop your application. If you're developing a library on the other hand, please take a moment to consider if you actually need jQuery as
+a dependency, by Zack Bloom and Adam Schwartz.
 
 ### Workshops
 
