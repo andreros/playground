@@ -27,6 +27,8 @@ JavaScript and gives an overview of the language, by Mozilla.
 
 - [NodeSchool](https://nodeschool.io/) - (Free) Open source workshops that teach web software skills. Do them on your own or at a workshop nearby. 
 NodeSchool is an open source project run by volunteers with two goals: to create high quality programming curriculum and to host community learning events.
+- [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) - (Free) A tutorial that will 
+have you deploying a Node.js app in minutes, by Heroku.
 
 ### Video Tutorials
 
