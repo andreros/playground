@@ -3,7 +3,9 @@
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
-Example of a RESTful API implemented in Node.js which retrieves static JSON for testing purposes.
+Example of a RESTful API implemented in Node.js which retrieves static JSON for testing purposes. The example implements
+a sorting and a searching mechanisms over the static data. These mechanisms are implemented resorting to
+[Underscore.js](http://underscorejs.org/).
 
 
 ## Prerequisites
@@ -28,23 +30,19 @@ be started and accessible in the `http://localhost:5000/api/v1/` endpoint.
 
 ## API Methods
 
-Note: Bear in mind the following methods are implemented for demonstration purposes. The `POST` method for creating a new task or the `PUT`
-for updating a task accept no parameters (which in a real world situation they would). Please, refer to the code for the implementation
-details.
+Note: Please, refer to the code for the implementation details.
 
 | Verb | Endpoint | Description |
 | --- | --- | --- |
-| `GET` | `/tasks` | Retrieve all tasks. |
-| `GET` | `/tasks/:taskId` | Retrieve one task details, given its ID. |
-| `POST` | `/tasks` | Create a new task. |
-| `PUT` | `/tasks/:taskId` | Update one task, given its ID. |
-| `DELETE` | `/tasks/:taskId` | Delete one task, given its ID. |
+| `GET` | `/options` | Retrieve all options. |
+| `GET` | `/options/:searchTerm` | Retrieve all options matching the search term. The search performed is case insensitive. |
 
 
 ## Built With
 
 *  Node.js: [https://nodejs.org/](https://nodejs.org/)
 *  Express: [https://expressjs.com/](https://expressjs.com/)
+*  Underscore: [http://underscorejs.org/](http://underscorejs.org/)
 
 
 ## Author
