@@ -99,6 +99,14 @@ accessible, by AT&T and Google.
 - [The 2018 Web Developer Roadmap](https://codeburst.io/the-2018-web-developer-roadmap-826b1b806e8d) - An illustrated guide to becoming a
 Frontend or Backend Developer with links to courses, by Brandon Morelli.
 
+### Standardization, Compliance and Rule Checking
+
+- [HTML_CodeSniffer](http://squizlabs.github.io/HTML_CodeSniffer/) / [HTML CodeSniffer GitHub](https://github.com/squizlabs/HTML_CodeSniffer) - client-side JavaScript application that checks a HTML document or source code, and detects violations of a defined coding standard. Comes
+with standards that cover the three conformance levels of the W3C's Web Content Accessibility Guidelines (WCAG) 2.0 and the U.S. Section
+508 legislation, by SquizLabs.
+- [The Front-end Checklist](https://frontendchecklist.io/) / [The Front-end Checklist GitHub](https://github.com/thedaviddias/Front-End-Checklist) - 
+The perfect Front-End Checklist for modern websites and meticulous developers, by the David Dias.
+
 
 <br>
 <h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/database.png" width="40" align="absmiddle">Databases</h2>
