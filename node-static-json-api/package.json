@@ -1,0 +1,33 @@
+{
+    "name": "node-static-json-api",
+    "version": "1.0.0",
+    "description": "Example of a RESTful API implemented in Node.js which retrieves static JSON for testing purposes.",
+    "main": "api.js",
+    "scripts": {
+        "start": "node api.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "cors": "^2.8.4",
+        "express": "^4.16.3",
+        "request": "^2.85.0",
+        "underscore": "^1.8.3"
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andreros/playground/tree/master/node-static-json-api"
+    },
+    "homepage": "https://github.com/andreros/playground/tree/master/node-static-json-api#readme",
+    "keywords": [
+        "node",
+        "nodejs",
+        "express",
+        "expressjs",
+        "request",
+        "api"
+    ],
+    "author": "André Rosa <andreros@gmail.com>",
+    "contributors": [],
+    "license": "Unlicense"
+}

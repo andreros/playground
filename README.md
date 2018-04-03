@@ -70,6 +70,9 @@ calls to another API, acting like a tunnel. The target API is [http://jsonplaceh
 * [node-mongodb-api](https://github.com/andreros/playground/tree/master/node-mongodb-api) - 
 Example of a RESTful API implemented in Node.js with MongoDB database interaction.
 
+* [node-static-json-api](https://github.com/andreros/playground/tree/master/node-static-json-api) - 
+Example of a RESTful API implemented in Node.js which retrieves static JSON for testing purposes.
+
 * [python-web-scraper](https://github.com/andreros/playground/tree/master/python-web-scraper) - 
 Python Web Scraper is a personal project made with the purpose of learning the Python programming language 
 while making something that is both educational and usable in a real life or enterprise context.
