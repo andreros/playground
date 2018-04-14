@@ -1,4 +1,4 @@
-# Awesome Development
+# Awesome Front-end Development
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andreros/)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
@@ -37,12 +37,26 @@ have you deploying a Node.js app in minutes, by Heroku.
 
 - [#JavaScript30](https://javascript30.com/) - (Free) 30 Day Vanilla JS Coding Challenge. Build 30 things in 30 days with 30 
 tutorials, by Wes Bos.
+- [Webpack: The Core Concepts](https://webpack.academy/courses/the-core-concepts/lectures/2951138) - One of the biggest mysteries about webpack
+is how it works. As one of the maintainers of webpack, Sean Larkin is going to take you down a step by step process to not only understand how 
+webpack works, but give what he believes are The Core Concepts, by Webpack Academy.
 
 ### Articles
 
 - [Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/) - 
 Debounce and throttle: two similar (but different!) techniques to control how many times we allow a function to be executed over
 time explained, by David Corbacho.
+
+<br>
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/typescript.png" width="50" align="absmiddle">TypeScript</h2>
+
+- [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/) - (Free) The definitive guide to TypeScript. Dive into all the details
+that a JavaScript developer needs to know to be a great TypeScript developer, by [Basarat Ali Syed](https://github.com/basarat).
+
+### Articles
+
+- [Awesome TypeScript](https://github.com/dzharii/awesome-typescript) - A collection of awesome TypeScript resources for client-side
+and server-side development. Write your awesome JavaScript in TypeScript, by [Dmytro Zharii](https://github.com/dzharii).
 
 
 <br>

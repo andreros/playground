@@ -7,12 +7,10 @@ Repository for test projects, code examples and other personal experiences.
 ## Project intentions and ideas for future implementations
 
 * Electronize Miuki Miu's [Cassete Tape](https://github.com/miukimiu/cassette-tape) project.
-* Keep adding other projects, spikes and experiences to the Playground (there are some PHP API, Angular I and II 
-examples laying in my hard drive just waiting to be added).
 
 ## Projects
 
-* [awesome-development](https://github.com/andreros/playground/tree/master/awesome-development) - 
+* [awesome-front-end-development](https://github.com/andreros/playground/tree/master/awesome-front-end-development) - 
 An awesome & curated list of development resources with special focus on front-end technologies.
 
 * [css-triangle-example](https://github.com/andreros/playground/tree/master/css-triangle-example) - 
