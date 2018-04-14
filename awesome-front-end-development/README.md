@@ -6,7 +6,7 @@
 An awesome & curated list of development resources with special focus on front-end technologies.
 
 
-<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/javascript.png" width="50" align="absmiddle">JavaScript</h2>
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-front-end-development/img/javascript.png" width="50" align="absmiddle">JavaScript</h2>
 
 ### Books
 
@@ -48,7 +48,7 @@ Debounce and throttle: two similar (but different!) techniques to control how ma
 time explained, by David Corbacho.
 
 <br>
-<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/typescript.png" width="50" align="absmiddle">TypeScript</h2>
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-front-end-development/img/typescript.png" width="50" align="absmiddle">TypeScript</h2>
 
 - [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/) - (Free) The definitive guide to TypeScript. Dive into all the details
 that a JavaScript developer needs to know to be a great TypeScript developer, by [Basarat Ali Syed](https://github.com/basarat).
@@ -60,7 +60,7 @@ and server-side development. Write your awesome JavaScript in TypeScript, by [Dm
 
 
 <br>
-<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/css3.png" width="50" align="absmiddle">CSS</h2>
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-front-end-development/img/css3.png" width="50" align="absmiddle">CSS</h2>
 
 ### Books
 
@@ -93,7 +93,7 @@ clip-path property. Inspired by the technique seen on the speakers page of the 4
 
 
 <br>
-<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/html5.png" width="50" align="absmiddle">Web Development</h2>
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-front-end-development/img/html5.png" width="50" align="absmiddle">Web Development</h2>
 
 ### Books
 
@@ -123,7 +123,7 @@ The perfect Front-End Checklist for modern websites and meticulous developers, b
 
 
 <br>
-<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/database.png" width="40" align="absmiddle">Databases</h2>
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-front-end-development/img/database.png" width="40" align="absmiddle">Databases</h2>
 
 ### Courses
 
@@ -132,7 +132,7 @@ free courses, by MongoDB.
 
 
 <br>
-<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-development/img/git.png" width="50" align="absmiddle">Version Control Systems</h2>
+<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-front-end-development/img/git.png" width="50" align="absmiddle">Version Control Systems</h2>
 
 ### Guides
 
