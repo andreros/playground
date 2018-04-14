@@ -48,7 +48,7 @@ Debounce and throttle: two similar (but different!) techniques to control how ma
 time explained, by David Corbacho.
 
 <br>
-<h2><img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-front-end-development/img/typescript.png" width="50" align="absmiddle">TypeScript</h2>
+<h2>&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/andreros/playground/master/awesome-front-end-development/img/typescript.png" width="50" align="absmiddle">TypeScript</h2>
 
 - [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/) - (Free) The definitive guide to TypeScript. Dive into all the details
 that a JavaScript developer needs to know to be a great TypeScript developer, by [Basarat Ali Syed](https://github.com/basarat).
