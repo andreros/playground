@@ -1,0 +1,13 @@
+{
+  "name": "@demo/average",
+  "version": "1.0.2",
+  "description": "Get the average of an array of values.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "ICS Stack Team",
+  "license": "MIT",
+  "dependencies": {
+    "@demo/add": "^1.0.1",
+    "@demo/divide": "^1.1.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@demo/lucky",
+  "version": "1.0.1",
+  "description": "Get the difference of two numbers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --notify"
+  },
+  "author": "ICS Stack Team",
+  "license": "MIT",
+  "dependencies": {
+    "is-thirteen": "^2.0.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}

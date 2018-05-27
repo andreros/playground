@@ -1,0 +1,14 @@
+{
+  "name": "mathstuff",
+  "version": "1.0.0",
+  "description": "A project to demonstrate a monorepo with Lerna",
+  "author": "ICS Stack Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://code.ldschurch.org/git/scm/ows/mathstuff.git"
+  },
+  "devDependencies": {
+    "lerna": "^2.9.0"
+  }
+}

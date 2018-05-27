@@ -1,0 +1,9 @@
+{
+  "name": "@demo/add",
+  "version": "1.0.1",
+  "description": "Adds two numbers together.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "ICS Stack Team",
+  "license": "MIT"
+}

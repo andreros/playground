@@ -1,0 +1,14 @@
+{
+  "name": "@demo/divide",
+  "version": "1.1.0",
+  "description": "Get the quotient of two numbers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --notify"
+  },
+  "author": "ICS Stack Team",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}

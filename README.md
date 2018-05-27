@@ -50,6 +50,9 @@ Example project showing how to use a SQLite database in a Java application. This
 * [json-placeholder-api-tester](https://github.com/andreros/playground/tree/master/json-placeholder-api-tester) - 
 Simple application to test JSONPlaceholder, a fake online REST API for Testing and Prototyping.
 
+* [lerna-mathstuff](https://github.com/andreros/playground/tree/master/lerna-mathstuff) - 
+A project to demonstrate a monorepo with Lerna.
+
 * [maven-app-example](https://github.com/andreros/playground/tree/master/maven-app-example) - 
 Maven example project resulting from the resolution of the official Apache Maven project's 
 "[Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/index.html)".

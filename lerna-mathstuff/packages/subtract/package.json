@@ -1,0 +1,9 @@
+{
+  "name": "@demo/substract",
+  "version": "1.0.1",
+  "description": "Get the difference of two numbers.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "ICS Stack Team",
+  "license": "MIT"
+}

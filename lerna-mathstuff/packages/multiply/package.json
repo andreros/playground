@@ -1,0 +1,9 @@
+{
+  "name": "@demo/multiply",
+  "version": "1.0.1",
+  "description": "Get the product of two numbers.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "ICS Stack Team",
+  "license": "MIT"
+}
