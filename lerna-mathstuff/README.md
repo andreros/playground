@@ -18,6 +18,16 @@ please visit [Lerna Mathstuff Git Repository](https://github.com/eatrocks/lerna-
 
 Please, read the [Node.js official installation guide](https://github.com/nodejs/node/wiki/Installation).
 
+### [Lerna](https://github.com/lerna/lerna)
+
+#### Lerna installation
+
+Install Lerna globally with [npm](https://www.npmjs.com/).
+
+```sh
+$ npm install --global lerna
+```
+
 
 ## Author
 
