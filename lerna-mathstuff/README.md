@@ -5,8 +5,9 @@
 
 "Monorepo - A single repository holding the code of many modules".
 
-A project to demonstrate a monorepo with Lerna, by [Bruce Campbell](https://github.com/eatrocks). For further details,
-please visit [Lerna Mathstuff Git Repository](https://github.com/eatrocks/lerna-mathstuff) or view the presentation
+A project to demonstrate a monorepo with Lerna, by [Bruce Campbell](https://github.com/eatrocks) as shown in this youtube video tutorial
+"[Managing a Monorepo with Lerna](https://www.youtube.com/watch?v=e7VBl4Kra5E)". For further details, please visit
+[Lerna Mathstuff Git Repository](https://github.com/eatrocks/lerna-mathstuff) or view the presentation
 [Monorepo with Lerna](https://slides.com/eatrocks/monorepos-with-lerna/).
 
 
@@ -28,6 +29,24 @@ Install Lerna globally with [npm](https://www.npmjs.com/).
 $ npm install --global lerna
 ```
 
+### [Verdaccio](https://github.com/verdaccio/verdaccio)
+
+Verdaccio is a lightweight private npm proxy registry. For further details, please visit
+[https://github.com/verdaccio/verdaccio](https://github.com/verdaccio/verdaccio).
+
+#### Verdaccio installation
+
+Install Verdaccio globally (application will create default config in config.yaml you can edit later).
+
+```sh
+$ npm install --global verdaccio
+```
+
+Run verdaccio in your terminal (preferably in a separate terminal window).
+
+```sh
+$ verdaccio
+```
 
 ## Author
 
