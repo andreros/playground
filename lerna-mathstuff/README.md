@@ -48,6 +48,19 @@ Run verdaccio in your terminal (preferably in a separate terminal window).
 $ verdaccio
 ```
 
+## Commands ran during the tutorial
+
+1. lerna bootstrap - Bootstraps all the repository modules, creating the "node_modules" folder for each repo module and downloading its dependencies.
+1. lerna publish - Publishes the modules into git and the NPM registry.
+1. lerna updated - Lists the repo modules which suffered changes, either because they were changed or because their repo dependencies were changed.
+1. lerna run test - Invokes the script "test" for each repo module that has this command defined.
+1. lerna run test --scope @mathstuff/divide - Invokes the script "test" for the repo "@mathstuff/divide" module.
+1. git add . - Adds new files to git.
+1. git commit -m'lerna-mathstuff - Update divide' - Commits changes to git.
+1. git push origin head - Pushes changes to git.
+1. lerna publish - Publishes the modules into git and the NPM registry.
+1. git tag - Shows the repo available tags in git.
+
 ## Author
 
 **André Rosa**
