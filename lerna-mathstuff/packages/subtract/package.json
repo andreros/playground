@@ -1,5 +1,5 @@
 {
-  "name": "@demo/substract",
+  "name": "@mathstuff/substract",
   "version": "1.0.1",
   "description": "Get the difference of two numbers.",
   "main": "index.js",

@@ -1,13 +1,13 @@
 {
-  "name": "@demo/exponentiate",
-  "version": "2.0.0",
+  "name": "@mathstuff/exponentiate",
+  "version": "1.0.1",
   "description": "Get the exponentiation of two numbers.",
   "main": "index.js",
   "scripts": {},
   "author": "ICS Stack Team",
   "license": "MIT",
   "dependencies": {
-    "@demo/divide": "^1.1.0",
-    "@demo/multiply": "^1.0.1"
+    "@mathstuff/divide": "^1.0.1",
+    "@mathstuff/multiply": "^1.0.1"
   }
 }

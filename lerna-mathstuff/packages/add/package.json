@@ -1,5 +1,5 @@
 {
-  "name": "@demo/add",
+  "name": "@mathstuff/add",
   "version": "1.0.1",
   "description": "Adds two numbers together.",
   "main": "index.js",

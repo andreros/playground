@@ -1,6 +1,6 @@
 {
-  "name": "@demo/divide",
-  "version": "1.1.0",
+  "name": "@mathstuff/divide",
+  "version": "1.0.1",
   "description": "Get the quotient of two numbers.",
   "main": "index.js",
   "scripts": {
