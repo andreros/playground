@@ -1,0 +1,31 @@
+{
+    "name": "phaser3-tutorial",
+    "version": "1.0.0",
+    "description": "Example of a platform game implemented with the Phaser 3 HTML5 Game Framework.",
+    "main": "index.html",
+    "scripts": {
+        "start": "gulp default",
+        "serve": "gulp serve"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andreros/playground/tree/master/phaser3-tutorial"
+    },
+    "homepage": "https://github.com/andreros/playground/tree/master/phaser3-tutorial#readme",
+    "keywords": [
+        "phaser",
+        "phaser3",
+        "game",
+        "platform"
+    ],
+    "dependencies": {
+        "phaser": "^3.10.1"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.24.5",
+        "gulp": "^3.9.1"
+    },
+    "author": "André Rosa <andreros@gmail.com>",
+    "contributors": [],
+    "license": "Unlicense"
+}
