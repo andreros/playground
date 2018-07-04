@@ -9,9 +9,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/andreros/playground/tree/master/phaser3-tutorial"
+        "url": "https://github.com/andreros/playground/tree/master/phaser-game-development-example/phaser3-tutorial"
     },
-    "homepage": "https://github.com/andreros/playground/tree/master/phaser3-tutorial#readme",
+    "homepage": "https://github.com/andreros/playground/tree/master/phaser-game-development-example/phaser3-tutorial#readme",
     "keywords": [
         "phaser",
         "phaser3",

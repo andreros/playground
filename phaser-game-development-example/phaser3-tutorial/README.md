@@ -23,7 +23,7 @@ Clone or download this project. From the project directory run the command `npm 
 ## Run Your Application
 
 To run your application, from the project directory run the command `npm start`. The API will
-be started and accessible in the `http://localhost:5000/api/v1/` endpoint.
+be started and accessible in the `http://localhost:3000` endpoint.
 
 
 ## Built With
