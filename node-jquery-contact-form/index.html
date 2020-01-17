@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Contact Form</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="icon" type="image/png" href="src/assets/images/icons/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="src/assets/vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="src/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="src/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+		<link rel="stylesheet" type="text/css" href="src/assets/vendor/animate/animate.css">
+		<link rel="stylesheet" type="text/css" href="src/assets/vendor/select2/select2.min.css">
+		<link rel="stylesheet" type="text/css" href="src/assets/css/util.css">
+		<link rel="stylesheet" type="text/css" href="src/assets/css/main.css">
+	</head>
+	<body>
+		<div class="container-contact100">
+			<div class="wrap-contact100">
+				<form class="contact100-form validate-form">
+					<span class="contact100-form-title">
+						Send Us A Message
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="Name is required">
+						<label class="label-input100" for="name">Full name</label>
+						<input class="input100" type="text" name="name" placeholder="Enter your name...">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<label class="label-input100" for="email">Email Address</label>
+						<input class="input100" type="text" name="email" placeholder="Enter your email...">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Phone is required">
+						<label class="label-input100" for="name">Phone number</label>
+						<input class="input100" type="text" name="phone" placeholder="Enter your phone...">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100">
+						<div class="label-input100">What do you need?</div>
+						<div class="validate-input" data-validate="Service is required">
+							<select class="js-select2 input100" name="service">
+								<option value="-1">Please choose...</option>
+								<option>eCommerce Business</option>
+								<option>Online Services</option>
+							</select>
+							<div class="dropDownSelect2"></div>
+						</div>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Attachment is required">
+						<label class="label-input100" for="attachment">Attachment</label>
+						<input class="input100" type="file" name="attachment">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Message is required">
+						<label class="label-input100" for="message">Message</label>
+						<textarea class="input100" name="message" placeholder="Type your message here..."></textarea>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-contact100-form-btn">
+						<button type="button" class="contact100-form-btn">
+							Send
+							<span class="contact100-form-btn-spinner dis-none">
+								&nbsp;<i class="fa fa-spinner fa-spin fa-lg" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+
+					<div class="contact100-form-social flex-c-m">
+						<a href="#" class="contact100-form-social-item flex-c-m bg1 m-r-5">
+							<i class="fa fa-facebook-f" aria-hidden="true"></i>
+						</a>
+
+						<a href="#" class="contact100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+
+						<a href="#" class="contact100-form-social-item flex-c-m bg3">
+							<i class="fa fa-youtube-play" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+
+				<div class="contact100-more flex-col-c-m" style="background-image: url('src/assets/images/bg-01.jpg');">
+				</div>
+			</div>
+		</div>
+
+		<script src="src/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script src="src/assets/vendor/bootstrap/js/popper.js"></script>
+		<script src="src/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="src/assets/vendor/select2/select2.min.js"></script>
+		<script src="src/main.js"></script>
+	</body>
+</html>

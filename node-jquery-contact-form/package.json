@@ -1,0 +1,34 @@
+{
+	"name": "node-jquery-contact-form",
+	"version": "1.0.0",
+	"description": "Example of an HTML5 multipart contact form with jQuery which communicates with a Node.js API for email sending.",
+	"main": "index.html",
+	"scripts": {
+		"client": "npx http-server ./",
+		"server": "node ./src/server/api.js"
+	},
+	"dependencies": {
+		"cors": "^2.8.4",
+		"express": "^4.17.1",
+		"http-server": "^0.12.1",
+		"multer": "1.4.2",
+		"nodemailer": "^6.4.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/andreros/playground/tree/master/node-jquery-contact-form"
+	},
+	"homepage": "https://github.com/andreros/playground/tree/master/node-jquery-contact-form#readme",
+	"keywords": [
+		"node",
+		"nodejs",
+		"express",
+		"expressjs",
+		"multer",
+		"nodemailer",
+		"api"
+	],
+	"author": "André Rosa <andreros@gmail.com>",
+	"contributors": [],
+	"license": "Unlicense"
+}

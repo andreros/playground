@@ -50,7 +50,7 @@ Example project showing how to use a SQLite database in a Java application. This
 * [json-placeholder-api-tester](https://github.com/andreros/playground/tree/master/json-placeholder-api-tester) -
 Simple application to test JSONPlaceholder, a fake online REST API for Testing and Prototyping.
 
-* [lerna-mathstuff](https://github.com/andreros/playground/tree/master/lerna-mathstuff) - 
+* [lerna-mathstuff](https://github.com/andreros/playground/tree/master/lerna-mathstuff) -
 A project to demonstrate a monorepo with Lerna.
 
 * [maven-app-example](https://github.com/andreros/playground/tree/master/maven-app-example) -
@@ -68,6 +68,9 @@ Twitter Bootstrap for front-end.
 
 * [node-firebase-api](https://github.com/andreros/playground/tree/master/node-firebase-api) -
 An example of a RESTful API implemented in Node.js with Firebase database interaction.
+
+* [node-jquery-contact-form](https://github.com/andreros/playground/tree/master/node-jquery-contact-form) -
+An example of an HTML5 multipart contact form with jQuery which communicates with a Node.js API for email sending.
 
 * [node-json-placeholder-tunnel-api](https://github.com/andreros/playground/tree/master/node-json-placeholder-tunnel-api) -
 An example of a RESTful API implemented with Node.js, Express and Request. This example implements an API that performs
