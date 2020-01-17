@@ -8,8 +8,8 @@
 /* Includes and Variables
 /**************************************************************************************************************************************/
 var senderEmailService = 'gmail',
-	senderEmail = 'development.pit@gmail.com',
-	senderEmailPassword = '#DevPit2020',
+	senderEmail = 'email@gmail.com',
+	senderEmailPassword = 'password',
 
 	serverUploadFolder = 'uploads/',
 	apiDefaultPort = 5000,
