@@ -7,12 +7,15 @@
 /**************************************************************************************************************************************/
 /* Includes and Variables
 /**************************************************************************************************************************************/
-var senderEmailService = 'gmail',
-	senderEmail = 'email@gmail.com',
-	senderEmailPassword = 'password',
+var dotenv = require('dotenv');
+dotenv.config();
 
-	serverUploadFolder = 'uploads/',
-	apiDefaultPort = 5000,
+var senderEmailService = process.env.SENDER_EMAIL_SERVICE,
+	senderEmail = process.env.SENDER_EMAIL,
+	senderEmailPassword = process.env.SENDER_EMAIL_PASSWORD,
+
+	serverUploadFolder = process.env.SERVER_UPLOAD_FOLDER || 'uploads/',
+	port = process.env.PORT || 5000,
 
 	// Express API
 	express = require('express'), // web framework for creating the API
@@ -31,10 +34,7 @@ var senderEmailService = 'gmail',
     nodemailer = require('nodemailer'), // send emails from Node.JS
     // create reusable transporter object using the default SMTP transport
     // to enable google emails sending do not forget to activate less secure apps in your google account
-    transporter = nodemailer.createTransport({ service: senderEmailService, auth: { user: senderEmail, pass: senderEmailPassword } });
-
-    // global vars
-    port = process.env.PORT || apiDefaultPort; // set API port
+	transporter = nodemailer.createTransport({ service: senderEmailService, auth: { user: senderEmail, pass: senderEmailPassword } });
 
 
 /**************************************************************************************************************************************/

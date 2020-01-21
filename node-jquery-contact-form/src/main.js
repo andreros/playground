@@ -79,7 +79,7 @@
 			//jQuery AJAX request
 			//https://api.jquery.com/jquery.ajax/
 			$.ajax({
-				url: 'http://localhost:5000/api/v1/sendmail/',
+				url: 'http://localhost:5001/api/v1/sendmail/',
 				type: 'POST',
 				data: formData,
 				processData: false,  // tell jQuery not to process the data
