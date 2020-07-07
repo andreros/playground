@@ -11,7 +11,7 @@
         "package-linux": "electron-packager . electron-gunsmoke-shooter-game --overwrite --asar=true --platform=linux --arch=x64 --prune=true --out=release-builds"
     },
     "devDependencies": {
-        "electron": "~1.8.3",
+        "electron": "~9.1.0",
         "electron-builder": "^20.3.1",
         "electron-packager": "^11.1.0"
     },
